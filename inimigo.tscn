@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://caxokklc3qmpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1su0k"]
+
+[node name="Inimigo" type="CharacterBody2D" unique_id=1389595362]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1357767509]
+shape = SubResource("RectangleShape2D_1su0k")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1720392574]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987650505]
