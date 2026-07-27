@@ -5,3 +5,7 @@
 [node name="Map" type="Node2D" unique_id=633245177]
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("1_c7s6e")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1899736238]
+position = Vector2(586, 85)
+centered = false

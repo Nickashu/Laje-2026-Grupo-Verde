@@ -3,17 +3,19 @@
 [ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_4flbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(51.5, 62)
+size = Vector2(123, 125)
 
 [node name="Player" type="CharacterBody2D" unique_id=482596540]
 motion_mode = 1
 script = ExtResource("1_4flbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646474947]
-position = Vector2(589, 322)
+position = Vector2(64, 64)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2078607136]
 position = Vector2(573, 318)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=539707254]
+position = Vector2(-2, 0)
+centered = false
