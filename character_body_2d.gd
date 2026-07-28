@@ -1,7 +1,14 @@
 extends CharacterBody2D
 
 var velocidade = Vector2(0,0) #velocidade normal no plano cartesiano é zero
+
 @export var frozen = false
+
+
+@onready var posicao_inicial: Vector2 = global_position
+func respawn() -> void:
+	global_position = posicao_inicial
+
 
 const VELOCIDADE_MAX = 2
 const ACELERACAO = 15
@@ -29,3 +36,6 @@ func _physics_process(delta):
 		velocidade = velocidade.move_toward(Vector2.ZERO, ATRITO * delta)
 
 	move_and_collide(velocidade)
+	
+	if (Input.is_key_pressed(KEY_R)):
+		respawn()
