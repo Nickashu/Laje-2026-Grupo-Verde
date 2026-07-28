@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://dlbnbn2dnea1k"]
+[gd_scene format=3 uid="uid://d1ge5hy0jhhw6"]
 
-[ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_4flbx"]
-[ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_58gcn"]
+[ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_46glg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(27, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=482596540]
 motion_mode = 1
-script = ExtResource("1_4flbx")
+script = ExtResource("1_58gcn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646474947]
 shape = SubResource("RectangleShape2D_onrkg")
@@ -18,4 +18,4 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=539707254]
-texture = ExtResource("2_onrkg")
+texture = ExtResource("2_46glg")

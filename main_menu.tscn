@@ -1,31 +1,21 @@
 [gd_scene format=3 uid="uid://th13sjrgss2l"]
 
-[ext_resource type="Script" uid="uid://bs7lmebj7omi0" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_fu7sn"]
 
-[node name="MainMenu" type="Control" unique_id=288828817]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_06t4h")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(27, 28)
 
-[node name="Play" type="Button" parent="." unique_id=2021794159]
-layout_mode = 0
-offset_left = 363.0
-offset_top = 138.0
-offset_right = 773.0
-offset_bottom = 241.0
-text = "Play"
+[node name="Player" type="CharacterBody2D" unique_id=482596540]
+motion_mode = 1
+script = ExtResource("1_7vrkn")
 
-[node name="Quit" type="Button" parent="." unique_id=1939403526]
-layout_mode = 0
-offset_left = 364.0
-offset_top = 362.0
-offset_right = 772.0
-offset_bottom = 465.0
-text = "Quit"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646474947]
+shape = SubResource("RectangleShape2D_onrkg")
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2078607136]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=539707254]
+texture = ExtResource("2_fu7sn")
