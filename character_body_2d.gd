@@ -5,7 +5,7 @@ var velocidade = Vector2(0,0) #velocidade normal no plano cartesiano é zero
 
 const VELOCIDADE_MAX = 2
 const ACELERACAO = 15
-const ATRITO = 10
+const ATRITO = 15
 # aceleracao e atrito pra adicionar fluidez ao movimento
 
 func _physics_process(delta):
@@ -16,8 +16,8 @@ func _physics_process(delta):
 	resultante.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	resultante.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	# operação de subtração pra decidir a direção da resultante x e y (0, 1 ou -1)
-	resultante = resultante.normalized()
-	# faz com que a direcao, quando sobreposta (cima ou baixo com esquerda ou direita), nao fique mais rapido
+	# resultante = resultante.normalized()
+	# faz com que a direcao, quando sobreposta (cima ou baixo com esquerda ou direita), nao fique mais rapido (vou deixar desativado por enquanto)
 	
 	if resultante != Vector2(0,0):
 		
