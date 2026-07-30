@@ -26,11 +26,14 @@ const ATRITO = 1000
 # aceleracao e atrito pra adicionar fluidez ao movimento
 
 func _physics_process(delta):
-	
-	if frozen:
-		velocity = Vector2.ZERO
-		move_and_slide()
-		return
+	if !frozen:
+		animation_tree.active = true
+		move(delta)
+	else:
+		velocity = Vector2(0,0)
+		animation_tree.active = false
+
+func move(delta):
 	
 	var resultante = Vector2(0,0)	
 	resultante.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -49,8 +52,8 @@ func _physics_process(delta):
 		ultima_direcao = resultante
 		
 		# pega as animações de correndo e parado da animation tree
-		animation_tree.set("parameters/Andando/blend_position", resultante)
-		animation_tree.set("parameters/Parado/blend_position", resultante)
+		animation_tree.set("parameters/Andando/blend_position", velocity.normalized())
+		animation_tree.set("parameters/Parado/blend_position", velocity.normalized())
 		
 	else: 
 		velocity = velocity.move_toward(Vector2.ZERO, ATRITO * delta)

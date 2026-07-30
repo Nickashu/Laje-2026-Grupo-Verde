@@ -201,6 +201,9 @@ animation = &"parado_esquerda"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n7ghd"]
 animation = &"parado_direita"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kpjcp"]
+animation = &"parado_baixo"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_nvl01"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_1jxqw")
 blend_point_0/pos = Vector2(0, 1)
@@ -210,6 +213,8 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_b26j0")
 blend_point_2/pos = Vector2(-1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_n7ghd")
 blend_point_3/pos = Vector2(1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_kpjcp")
+blend_point_4/pos = Vector2(0, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_onrkg"]
@@ -262,4 +267,4 @@ tree_root = SubResource("AnimationNodeStateMachine_onrkg")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Andando/blend_position = Vector2(-0.00055527687, 0.98734176)
-parameters/Parado/blend_position = Vector2(0, 0)
+parameters/Parado/blend_position = Vector2(-0.0011876225, -0.014217973)
