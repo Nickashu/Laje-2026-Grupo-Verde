@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bghn6aub68a78"]
+
+[ext_resource type="Script" uid="uid://cv6y1x2f17ldn" path="res://popups.gd" id="1_5kp8x"]
+
+[node name="Popups2" type="Control" unique_id=1474392959]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5kp8x")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=671596848]
+
+[node name="LogPopup" type="PopupPanel" parent="UI" unique_id=792030521]
+unique_name_in_owner = true
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1152, 648)
+visible = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/LogPopup" unique_id=495165966]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LogPopup/ScrollContainer" unique_id=1886207431]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/LogPopup/ScrollContainer/VBoxContainer" unique_id=690034888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Log 01
+"
+
+[node name="Label2" type="Label" parent="UI/LogPopup/ScrollContainer/VBoxContainer" unique_id=166562261]
+layout_mode = 2
+text = "Os sensores continuam indicando atividade no
+compartimento de contenção.
+
+A previsão está correta. Quando despertar, a
+reação mais provável será procurar imediatamente 
+uma rota de fuga.
+
+Provavelmente vai me odiar por isso.
+
+Se eu tivesse explicado antes... talvez nunca tivesse
+sido necessário chegar até aqui.
+
+                PRESSIONE [ESC] PARA FECHAR"

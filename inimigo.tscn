@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://caxokklc3qmpw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1su0k"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_030df"]
+
+[node name="Inimigo" type="CharacterBody2D" unique_id=1389595362]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1357767509]
+shape = SubResource("RectangleShape2D_1su0k")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2103407844]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=252013823]
+shape = SubResource("SeparationRayShape2D_030df")
