@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c73d8q8eb0qjj"]
+
+[ext_resource type="Script" uid="uid://b13qfv0gwkbke" path="res://interagível.gd" id="1_dcf8q"]
+[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_wqwjx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqwjx"]
+radius = 16.124516
+
+[node name="interagível" type="Area2D" unique_id=2081020138]
+script = ExtResource("1_dcf8q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502199384]
+position = Vector2(0, 20)
+shape = SubResource("CircleShape2D_wqwjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21109579]
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("2_wqwjx")
+
+[node name="Label" type="Label" parent="." unique_id=737223221]
+offset_left = -6.0
+offset_top = -31.0
+offset_right = 14.0
+offset_bottom = -8.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "[E]"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
