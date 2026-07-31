@@ -1,32 +1,72 @@
 [gd_scene format=3 uid="uid://bb7321ojalvca"]
 
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
-[ext_resource type="PackedScene" uid="uid://dlbnbn2dnea1k" path="res://Player.tscn" id="2_epxgt"]
+[ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
+[ext_resource type="PackedScene" uid="uid://dlbnbn2dnea1k" path="res://player.tscn" id="2_epxgt"]
 [ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://interagível.tscn" id="3_epxgt"]
+[ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://alavanca_roxa.tscn" id="6_yn1xw"]
+[ext_resource type="PackedScene" uid="uid://chipi86gsnwqx" path="res://alavanca_preta.tscn" id="7_yn1xw"]
+[ext_resource type="PackedScene" uid="uid://1i365mculgdr" path="res://alavanca_amarela.tscn" id="8_y1cof"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
 size = Vector2(102, 56)
 
 [node name="Node2D" type="Node2D" unique_id=887278194]
 
+[node name="mapa rascunho" type="Sprite2D" parent="." unique_id=1996792474]
+position = Vector2(594, -246)
+texture = ExtResource("1_v7a43")
+
+[node name="alavancaroxa" parent="." unique_id=720137343 instance=ExtResource("6_yn1xw")]
+position = Vector2(910, 77)
+
+[node name="alavanca_preta" parent="." unique_id=1060394162 instance=ExtResource("7_yn1xw")]
+position = Vector2(644, -776)
+
+[node name="alavanca_amarela" parent="." unique_id=263928888 instance=ExtResource("8_y1cof")]
+position = Vector2(964, -453)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=996967]
-position = Vector2(-1, -1.5258789e-05)
+position = Vector2(1275.0001, 1105.0001)
 scale = Vector2(9.046875, 5.0468755)
 texture = ExtResource("1_epxgt")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=903957146]
+[node name="parede amogus" type="StaticBody2D" parent="." unique_id=903957146]
+position = Vector2(-409, -84)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1032558302]
-position = Vector2(73, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede amogus" unique_id=1032558302]
 shape = SubResource("RectangleShape2D_epxgt")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=2071983443]
-position = Vector2(74, 4)
+[node name="Sprite2D" type="Sprite2D" parent="parede amogus" unique_id=2071983443]
 scale = Vector2(3.5, 2)
 texture = ExtResource("2_r1n86")
 
+[node name="parede externa" type="StaticBody2D" parent="." unique_id=1041584475]
+position = Vector2(-48, -36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="parede externa" unique_id=688030561]
+polygon = PackedVector2Array(0, 0, 0, 73, 171, 73, 171, 92, 244, 92, 244, -40, 283, -40, 283, -76, 244, -76, 244, -192, 283, -192, 283, -228, 244, -228, 244, -344, 283, -344, 283, -380, 244, -380, 244, -476, 436, -476, 436, -154, 510, -154, 510, -268, 891, -268, 891, -132, 889, -132, 889, -152, 756, -152, 756, -209, 683, -209, 683, -152, 664, -152, 664, -134, 661, -134, 661, -152, 550, -152, 550, -133, 398, -133, 398, -97, 417, -97, 417, 168, 569, 168, 569, 263, 588, 263, 588, 265, 569, 265, 569, 339, 642, 339, 642, 265, 624, 265, 624, 263, 739, 263, 739, 265, 720, 265, 720, 339, 794, 339, 794, 265, 775, 265, 775, 263, 794, 263, 794, 168, 891, 168, 891, 187, 927, 187, 927, 168, 984, 168, 984, 132, 927, 132, 927, -268, 946, -268, 946, -287, 993, -287, 993, -323, 946, -323, 946, -342, 927, -342, 927, -363, 1230, -363, 1230, -439, 1287, -439, 1287, -474, 1059, -474, 1059, -514, 1287, -514, 1287, -550, 1230, -550, 1230, -664, 1175, -664, 1175, -607, 1154, -607, 1154, -664, 1118, -664, 1118, -607, 1040, -607, 1040, -628, 1098, -628, 1098, -664, 1003, -664, 1003, -685, 1230, -685, 1230, -721, 607, -721, 607, -685, 625, -685, 625, -664, 531, -664, 531, -363, 870, -363, 870, -495, 891, -495, 891, -341, 872, -341, 872, -322, 870, -322, 870, -341, 510, -341, 510, -664, 436, -664, 436, -550, 244, -550, 244, -645, 226, -645, 226, -665, 189, -665, 189, -645, 171, -645, 171, 0, 2, 0, 2, -3, 109, -714, 284, -718, 359, -655, 447, -742, 663, -773, 1001, -773, 1267, -759, 1319, -567, 1304, -333, 1033, -311, 997, -209, 988, 5, 1039, 89, 1041, 220, 884, 276, 831, 368, 602, 368, 471, 359, 369, 264, -32, 143)
+
+[node name="ilha de parede" type="StaticBody2D" parent="." unique_id=773448377]
+position = Vector2(879, -605)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede" unique_id=1244983719]
+polygon = PackedVector2Array(0, 0, 0, 171, 116, 171, 116, 152, 151, 152, 151, 171, 267, 171, 267, 130, 40, 130, 40, 95, 97, 95, 97, 55, 40, 55, 40, 19, 267, 19, 267, -2, 40, -2, 40, -38, 78, -38, 78, -59, 40, -59, 40, -116, 0, -116)
+
+[node name="ilha de parede 2" type="StaticBody2D" parent="." unique_id=1197183124]
+position = Vector2(405, -133)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede 2" unique_id=1697865725]
+polygon = PackedVector2Array(0, 0, 0, 229, 116, 229, 116, 135, 134, 135, 134, 132, 116, 132, 116, 59, 189, 59, 189, 132, 171, 132, 171, 135, 286, 135, 286, 132, 267, 132, 267, 59, 341, 59, 341, 132, 323, 132, 323, 135, 341, 135, 341, 229, 438, 229, 438, 19, 97, 19, 97, 0)
+
+[node name="ilha de parede 3" type="StaticBody2D" parent="." unique_id=322261397]
+position = Vector2(879, -605)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede 3" unique_id=255414389]
+polygon = PackedVector2Array(-36, -116, -265, -116, -265, -95, -57, -95, -57, 38, -36, 38, -36, 0)
+
 [node name="interagível" parent="." unique_id=2081020138 instance=ExtResource("3_epxgt")]
-position = Vector2(73, 5)
+position = Vector2(284, -605)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]

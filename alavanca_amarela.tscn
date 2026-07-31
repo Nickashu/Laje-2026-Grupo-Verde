@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://1i365mculgdr"]
+
+[ext_resource type="Script" uid="uid://bfyhl3fy5huu6" path="res://alavanca_amarela.gd" id="1_fkgig"]
+[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_3e1pb"]
+[ext_resource type="Texture2D" uid="uid://bkiurxgyr0sbn" path="res://assets/LaserGate1.PNG" id="3_cceo6"]
+[ext_resource type="Script" uid="uid://c5syfu80gi4yf" path="res://porta_amarela_1.gd" id="4_fkgig"]
+[ext_resource type="Script" uid="uid://bioxqyon2sphn" path="res://porta_amarela_2.gd" id="5_fkgig"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqwjx"]
+radius = 16.124516
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w1qn"]
+size = Vector2(90.90909, 37.272724)
+
+[node name="alavanca_amarela" type="Area2D" unique_id=2081020138]
+script = ExtResource("1_fkgig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502199384]
+position = Vector2(0, 20)
+shape = SubResource("CircleShape2D_wqwjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21109579]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("2_3e1pb")
+
+[node name="Label" type="Label" parent="." unique_id=737223221]
+offset_left = -6.0
+offset_top = -31.0
+offset_right = 14.0
+offset_bottom = -8.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "[E]"
+
+[node name="portaamarela1" type="Sprite2D" parent="." unique_id=715454644]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-71, 36)
+rotation = 1.5707964
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_cceo6")
+vframes = 4
+script = ExtResource("4_fkgig")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="portaamarela1" unique_id=733688185]
+
+[node name="DoorCollisionAmarela1" type="CollisionShape2D" parent="portaamarela1/StaticBody2D" unique_id=1233876326]
+unique_name_in_owner = true
+position = Vector2(-7.6293945e-06, 8.63636)
+shape = SubResource("RectangleShape2D_0w1qn")
+
+[node name="portaamarela2" type="Sprite2D" parent="." unique_id=1661673552]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(-52, 111)
+rotation = 1.5707964
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_cceo6")
+vframes = 4
+script = ExtResource("5_fkgig")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="portaamarela2" unique_id=2010811423]
+
+[node name="DoorCollisionAmarela2" type="CollisionShape2D" parent="portaamarela2/StaticBody2D" unique_id=1292931726]
+unique_name_in_owner = true
+position = Vector2(-7.6293945e-06, 8.63636)
+shape = SubResource("RectangleShape2D_0w1qn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
