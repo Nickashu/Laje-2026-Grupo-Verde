@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://cbgarx8l0kwdv"]
+
+[ext_resource type="Script" uid="uid://jvoea2dxii45" path="res://canvas.gd" id="1_75aqd"]
+
+[node name="PopupsTeste" type="Control" unique_id=1474392959]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_75aqd")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=671596848]
+
+[node name="ColorRect1" type="ColorRect" parent="UI" unique_id=1338266953]
+unique_name_in_owner = true
+visible = false
+offset_left = 375.0
+offset_top = 700.0
+offset_right = 831.0
+offset_bottom = 1148.0
+color = Color(0.2784314, 0.2784314, 0.2784314, 0.5529412)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/ColorRect1" unique_id=495165966]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ColorRect1/ScrollContainer" unique_id=1886207431]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/ColorRect1/ScrollContainer/VBoxContainer" unique_id=690034888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Log 01
+"
+
+[node name="Label2" type="Label" parent="UI/ColorRect1/ScrollContainer/VBoxContainer" unique_id=166562261]
+layout_mode = 2
+text = "Os sensores continuam indicando atividade no
+compartimento de contenção.
+
+A previsão está correta. Quando despertar, a
+reação mais provável será procurar imediatamente 
+uma rota de fuga.
+
+Provavelmente vai me odiar por isso.
+
+Se eu tivesse explicado antes... talvez nunca tivesse
+sido necessário chegar até aqui.
+
+                        PRESSIONE [ESC] PARA FECHAR"
+
+[node name="ColorRect2" type="ColorRect" parent="UI" unique_id=2133374804]
+unique_name_in_owner = true
+visible = false
+offset_left = 375.0
+offset_top = 700.0
+offset_right = 831.0
+offset_bottom = 1148.0
+color = Color(0.2784314, 0.2784314, 0.2784314, 0.5529412)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/ColorRect2" unique_id=1733369068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ColorRect2/ScrollContainer" unique_id=1829705453]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/ColorRect2/ScrollContainer/VBoxContainer" unique_id=283866185]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Log 02
+"
+
+[node name="Label2" type="Label" parent="UI/ColorRect2/ScrollContainer/VBoxContainer" unique_id=1132839253]
+layout_mode = 2
+text = "Ainda não consigo transmitir uma mensagem estável.
+
+Sempre que tento falar diretamente, o sistema falha.
+
+Engraçado...
+
+Quando ainda estávamos juntos, também parecia que al-
+gumas palavras não chegavam ao destino.
+
+Talvez o problema nunca tenha sido encontrar as
+palavras.
+
+E sim ter coragem.
+
+Eu invadi os sistemas da nave e posso te ajudar... 
+nem que seja pela última vez.
+
+                        PRESSIONE [ESC] PARA FECHAR"
+
+[node name="ColorRect3" type="ColorRect" parent="UI" unique_id=2101902089]
+unique_name_in_owner = true
+visible = false
+offset_left = 375.0
+offset_top = 700.0
+offset_right = 831.0
+offset_bottom = 1148.0
+color = Color(0.2784314, 0.2784314, 0.2784314, 0.5529412)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/ColorRect3" unique_id=1838503216]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ColorRect3/ScrollContainer" unique_id=312455667]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/ColorRect3/ScrollContainer/VBoxContainer" unique_id=2065877341]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Log 03
+"
+
+[node name="Label2" type="Label" parent="UI/ColorRect3/ScrollContainer/VBoxContainer" unique_id=1863939374]
+layout_mode = 2
+text = "Eu disse que precisava de tempo.
+
+Você ouviu que eu queria ir embora.
+
+São frases parecidas.
+
+Talvez eu também nunca tenha conseguido explicar a
+diferença.
+
+Naquele momento achei que eram praticamente a 
+mesma coisa.
+
+Hoje percebo que não eram.
+
+Eu precisava entender quem eu era antes de voltar 
+até você.
+
+Continuo revivendo nossa última conversa.
+
+É estranho como uma memória muda cada vez que volta-
+mos até ela.
+
+Você só conseguia enxergar que eu estava me afastando.
+
+Talvez eu nunca tenha conseguido explicar isso.
+
+Talvez você nunca tenha conseguido perguntar do jeito 
+certo.
+
+E, entre o que eu não disse...
+
+...e o que você imaginou...
+
+nasceu uma distância muito maior do que qualquer espa-
+ço entre estrelas.
+
+Passei tanto tempo tentando alcançar sua órbita...
+
+...que esqueci de observar se você também mudava a sua 
+para encontrar a minha.
+
+Só agora, vendo seu esforço, que percebo que nenhum 
+de nós permaneceu parado.
+
+Nós apenas nos desencontramos.
+
+                        PRESSIONE [ESC] PARA FECHAR"
+
+[node name="ColorRect4" type="ColorRect" parent="UI" unique_id=1265313779]
+unique_name_in_owner = true
+offset_left = 375.0
+offset_top = 700.0
+offset_right = 831.0
+offset_bottom = 1148.0
+color = Color(0.2784314, 0.2784314, 0.2784314, 0.5529412)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/ColorRect4" unique_id=1572587785]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/ColorRect4/ScrollContainer" unique_id=719717717]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="UI/ColorRect4/ScrollContainer/VBoxContainer" unique_id=1651468011]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Log 04 - Registro Final.
+"
+
+[node name="Label2" type="Label" parent="UI/ColorRect4/ScrollContainer/VBoxContainer" unique_id=979737728]
+layout_mode = 2
+text = "Todas as portas da nave já podem ser abertas.
+
+Não porque o sistema finalmente respondeu.
+
+Mas porque eu abri elas, e parei de tentar controlar tudo.
+
+Vejo que você chegou até aqui...
+
+Significa que ainda escolheu caminhar na minha direção. 
+Escolheu me encontrar. Mesmo sem respostas.
+
+Mesmo sem saber o que estava te esperando do outro 
+lado.
+
+Durante muito tempo achei que algumas estrelas sim-
+plesmente brilhavam mais do que outras.
+
+Então aceitei permanecer na sombra.
+
+Era mais fácil acreditar nisso do que admitir que eu 
+queria ser vista.
+
+Agora me pergunto quantas vezes você olhou para mim...
+
+...e eu desviei o olhar antes de perceber.
+
+Não sei se existe uma forma certa de consertar o que 
+aconteceu.
+
+Mas agora acho que podemos conversar sem tentar fugir 
+um do outro.
+
+Passei tanto tempo procurando provas de que eu ainda 
+importava...
+
+...que deixei de notar as evidências que nunca 
+desapareceram.
+
+Elas nunca foram do tamanho que eu esperava.
+
+Mas talvez isso diga mais sobre as minhas expectativas 
+do que sobre os seus sentimentos.
+
+Vendo todo o seu esforço e dedicação para chegar até 
+mim apesar de eu o ter afastado
+
+Percebo que talvez valha a pena dar mais uma chance 
+para nós
+
+Desta vez eu quero ouvir tudo antes de responder.
+
+                        PRESSIONE [ESC] PARA FECHAR"

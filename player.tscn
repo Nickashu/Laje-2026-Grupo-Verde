@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dlbnbn2dnea1k"]
+[gd_scene format=3 uid="uid://dxcc0n8r0xdx4"]
 
 [ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://b7ofqur6b53vn" path="res://assets/spritesPlayer.png" id="2_onrkg"]
@@ -180,13 +180,13 @@ animation = &"andando_esquerda"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2hs0m"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_onrkg")
-blend_point_0/pos = Vector2(0, 1)
+blend_point_0/pos = Vector2(0, 0.90000004)
 blend_point_1/node = SubResource("AnimationNodeAnimation_i3pqv")
-blend_point_1/pos = Vector2(0.90000004, 0)
+blend_point_1/pos = Vector2(1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_hqtel")
-blend_point_2/pos = Vector2(0, -1)
+blend_point_2/pos = Vector2(0, -0.90000004)
 blend_point_3/node = SubResource("AnimationNodeAnimation_sweqy")
-blend_point_3/pos = Vector2(-0.90000004, 0)
+blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1jxqw"]
