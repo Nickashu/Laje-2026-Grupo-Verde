@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xb1jt6auy873"]
 
-[ext_resource type="Script" path="res://addons/area_of_sight_2d/area_of_sight_2d.gd" id="1_h6l5p"]
-[ext_resource type="Script" path="res://addons/area_of_sight_2d/example/enemy.gd" id="1_ow4b1"]
+[ext_resource type="Script" uid="uid://bx6ysw1v4wgpd" path="res://addons/area_of_sight_2d/area_of_sight_2d.gd" id="1_h6l5p"]
+[ext_resource type="Script" uid="uid://3y324lee4f4w" path="res://addons/area_of_sight_2d/example/inimigo.gd" id="1_ow4b1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cqe7j"]
 radius = 7.0
