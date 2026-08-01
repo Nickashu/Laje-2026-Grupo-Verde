@@ -2,18 +2,15 @@ extends Area2D
 
 var player = null
 var player_in_area = false
+var alavanca_amarela
 
 func _ready():
+	alavanca_amarela = false
 	$Label.visible = false  # Esconde o label de interação no início
 	
 func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("interagir"):  # Verifica se a tecla "E" foi pressionada
-		Popups2.LogPopup(null)
-		player.frozen = true
-
-	if player_in_area and Input.is_action_just_pressed("ui_cancel"): #or Input.is_action_just_pressed("click"):  # Verifica se a tecla "ESC" foi pressionada
-		Popups2.HideLogPopup()
-		player.frozen = false
+		alavanca_amarela = true
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Verifica se o corpo que entrou é o jogador

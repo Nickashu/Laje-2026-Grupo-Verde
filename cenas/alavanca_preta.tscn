@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://chipi86gsnwqx"]
+
+[ext_resource type="Script" uid="uid://c6ex4oqhitsva" path="res://scripts/alavanca_preta.gd" id="1_xmgfy"]
+[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_oqkbn"]
+[ext_resource type="Texture2D" uid="uid://bkiurxgyr0sbn" path="res://assets/LaserGate1.PNG" id="3_1cqsl"]
+[ext_resource type="Script" uid="uid://dsqiv35bwu6e6" path="res://scripts/porta_preta_1.gd" id="4_ubgt5"]
+[ext_resource type="Script" uid="uid://cb56ymuxud145" path="res://scripts/porta_preta_2.gd" id="5_ubgt5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqwjx"]
+radius = 16.124516
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0w1qn"]
+size = Vector2(90.90909, 37.272724)
+
+[node name="alavanca_preta" type="Area2D" unique_id=2081020138]
+script = ExtResource("1_xmgfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502199384]
+position = Vector2(0, 20)
+shape = SubResource("CircleShape2D_wqwjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21109579]
+modulate = Color(0.13149942, 0.13149942, 0.13149942, 1)
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("2_oqkbn")
+
+[node name="Label" type="Label" parent="." unique_id=737223221]
+offset_left = -6.0
+offset_top = -31.0
+offset_right = 14.0
+offset_bottom = -8.0
+scale = Vector2(0.6, 0.6)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "[E]"
+
+[node name="portapreta" type="Sprite2D" parent="." unique_id=715454644]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+self_modulate = Color(0.13149942, 0.13149942, 0.13149942, 1)
+position = Vector2(217, 161)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_1cqsl")
+vframes = 4
+script = ExtResource("4_ubgt5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="portapreta" unique_id=733688185]
+
+[node name="DoorCollisionPreta" type="CollisionShape2D" parent="portapreta/StaticBody2D" unique_id=1233876326]
+unique_name_in_owner = true
+position = Vector2(-7.6293945e-06, 8.63636)
+shape = SubResource("RectangleShape2D_0w1qn")
+
+[node name="portapreta2" type="Sprite2D" parent="." unique_id=1803371403]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+self_modulate = Color(0.13149942, 0.13149942, 0.13149942, 1)
+position = Vector2(74, 37)
+rotation = 1.5707964
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("3_1cqsl")
+vframes = 4
+script = ExtResource("5_ubgt5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="portapreta2" unique_id=1723286152]
+
+[node name="DoorCollisionPreta2" type="CollisionShape2D" parent="portapreta2/StaticBody2D" unique_id=1026372938]
+unique_name_in_owner = true
+position = Vector2(-7.6293945e-06, 8.63636)
+shape = SubResource("RectangleShape2D_0w1qn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

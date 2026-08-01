@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://bb7321ojalvca"]
+
+[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
+[ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
+[ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
+[ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
+[ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
+[ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
+[ext_resource type="PackedScene" uid="uid://chipi86gsnwqx" path="res://cenas/alavanca_preta.tscn" id="7_yn1xw"]
+[ext_resource type="PackedScene" uid="uid://byrb1v8l06cex" path="res://cenas/interagível_2.tscn" id="8_hc7gj"]
+[ext_resource type="PackedScene" uid="uid://1i365mculgdr" path="res://cenas/alavanca_amarela.tscn" id="8_y1cof"]
+[ext_resource type="PackedScene" uid="uid://c5nf3444rh01x" path="res://cenas/interagível_3.tscn" id="10_p8exr"]
+[ext_resource type="PackedScene" uid="uid://dlrtav2uxish4" path="res://cenas/interagível_4.tscn" id="11_qfgno"]
+[ext_resource type="Script" uid="uid://br7f84lof1c4l" path="res://scripts/camera_2d.gd" id="12_la5s6"]
+[ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
+[ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
+[ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
+size = Vector2(102, 56)
+
+[node name="Node2D" type="Node2D" unique_id=887278194]
+
+[node name="mapa rascunho" type="Sprite2D" parent="." unique_id=1996792474]
+position = Vector2(594, -246)
+texture = ExtResource("1_v7a43")
+
+[node name="alavancaroxa" parent="." unique_id=720137343 instance=ExtResource("6_yn1xw")]
+position = Vector2(910, 77)
+
+[node name="alavanca_preta" parent="." unique_id=1060394162 instance=ExtResource("7_yn1xw")]
+position = Vector2(644, -776)
+
+[node name="alavanca_amarela" parent="." unique_id=263928888 instance=ExtResource("8_y1cof")]
+position = Vector2(964, -453)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=996967]
+position = Vector2(1275.0001, 1105.0001)
+scale = Vector2(9.046875, 5.0468755)
+texture = ExtResource("1_epxgt")
+
+[node name="parede amogus" type="StaticBody2D" parent="." unique_id=903957146]
+position = Vector2(-409, -84)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="parede amogus" unique_id=1032558302]
+shape = SubResource("RectangleShape2D_epxgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="parede amogus" unique_id=2071983443]
+scale = Vector2(3.5, 2)
+texture = ExtResource("2_r1n86")
+
+[node name="parede externa" type="StaticBody2D" parent="." unique_id=1041584475]
+position = Vector2(-48, -36)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="parede externa" unique_id=688030561]
+polygon = PackedVector2Array(0, 0, 0, 73, 171, 73, 171, 92, 244, 92, 244, -40, 283, -40, 283, -76, 244, -76, 244, -192, 283, -192, 283, -228, 244, -228, 244, -344, 283, -344, 283, -380, 244, -380, 244, -476, 436, -476, 436, -154, 510, -154, 510, -268, 891, -268, 891, -132, 889, -132, 889, -152, 756, -152, 756, -209, 683, -209, 683, -152, 664, -152, 664, -134, 661, -134, 661, -152, 550, -152, 550, -133, 398, -133, 398, -97, 417, -97, 417, 168, 569, 168, 569, 263, 588, 263, 588, 265, 569, 265, 569, 339, 642, 339, 642, 265, 624, 265, 624, 263, 739, 263, 739, 265, 720, 265, 720, 339, 794, 339, 794, 265, 775, 265, 775, 263, 794, 263, 794, 168, 891, 168, 891, 187, 927, 187, 927, 168, 984, 168, 984, 132, 927, 132, 927, -268, 946, -268, 946, -287, 993, -287, 993, -323, 946, -323, 946, -342, 927, -342, 927, -363, 1230, -363, 1230, -439, 1287, -439, 1287, -474, 1059, -474, 1059, -514, 1287, -514, 1287, -550, 1230, -550, 1230, -664, 1175, -664, 1175, -607, 1154, -607, 1154, -664, 1118, -664, 1118, -607, 1040, -607, 1040, -628, 1098, -628, 1098, -664, 1003, -664, 1003, -685, 1230, -685, 1230, -721, 607, -721, 607, -685, 625, -685, 625, -664, 531, -664, 531, -363, 870, -363, 870, -495, 891, -495, 891, -341, 872, -341, 872, -322, 870, -322, 870, -341, 510, -341, 510, -664, 436, -664, 436, -550, 244, -550, 244, -645, 226, -645, 226, -665, 189, -665, 189, -645, 171, -645, 171, 0, 2, 0, 2, -3, 109, -714, 284, -718, 359, -655, 447, -742, 663, -773, 1001, -773, 1267, -759, 1319, -567, 1304, -333, 1033, -311, 997, -209, 988, 5, 1039, 89, 1041, 220, 884, 276, 831, 368, 602, 368, 471, 359, 369, 264, -32, 143)
+
+[node name="ilha de parede" type="StaticBody2D" parent="." unique_id=773448377]
+position = Vector2(879, -605)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede" unique_id=1244983719]
+polygon = PackedVector2Array(0, 0, 0, 171, 116, 171, 116, 152, 151, 152, 151, 171, 267, 171, 267, 130, 40, 130, 40, 95, 97, 95, 97, 55, 40, 55, 40, 19, 267, 19, 267, -2, 40, -2, 40, -38, 78, -38, 78, -59, 40, -59, 40, -116, 0, -116)
+
+[node name="ilha de parede 2" type="StaticBody2D" parent="." unique_id=1197183124]
+position = Vector2(405, -133)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede 2" unique_id=1697865725]
+polygon = PackedVector2Array(0, 0, 0, 229, 116, 229, 116, 135, 134, 135, 134, 132, 116, 132, 116, 59, 189, 59, 189, 132, 171, 132, 171, 135, 286, 135, 286, 132, 267, 132, 267, 59, 341, 59, 341, 132, 323, 132, 323, 135, 341, 135, 341, 229, 438, 229, 438, 19, 97, 19, 97, 0)
+
+[node name="ilha de parede 3" type="StaticBody2D" parent="." unique_id=322261397]
+position = Vector2(879, -605)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede 3" unique_id=255414389]
+polygon = PackedVector2Array(-36, -116, -265, -116, -265, -95, -57, -95, -57, 38, -36, 38, -36, 0)
+
+[node name="interagível" parent="." unique_id=2081020138 instance=ExtResource("3_epxgt")]
+position = Vector2(284, -605)
+
+[node name="interagível2" parent="." unique_id=47951355 instance=ExtResource("8_hc7gj")]
+position = Vector2(567, -490)
+
+[node name="interagível3" parent="." unique_id=1275376086 instance=ExtResource("10_p8exr")]
+position = Vector2(1155, -708)
+
+[node name="interagível4" parent="." unique_id=1114545296 instance=ExtResource("11_qfgno")]
+position = Vector2(924, -453)
+
+[node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
+zoom = Vector2(3, 3)
+limit_left = -410
+limit_top = -1027
+limit_right = 1560
+limit_bottom = 601
+script = ExtResource("12_la5s6")
+player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=759786513]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=426128318 node_paths=PackedStringArray("player", "camera")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 1, 0, 0.5921569)
+script = ExtResource("13_3x8ur")
+player = NodePath("../../Player")
+camera = NodePath("../../Camera2D")
+
+[node name="porta_temp" parent="." unique_id=116038246 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
+position = Vector2(425, -599)
+filtro = NodePath("../CanvasLayer/ColorRect")
+
+[node name="porta_temp2" parent="." unique_id=2035996300 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
+position = Vector2(558, -9)
+filtro = NodePath("../CanvasLayer/ColorRect")
+
+[node name="porta_perm" parent="." unique_id=307799865 node_paths=PackedStringArray("filtro") instance=ExtResource("15_y1h0r")]
+position = Vector2(159, -46)
+scale = Vector2(2.5031078, 0.8333342)
+filtro = NodePath("../CanvasLayer/ColorRect")
+
+[node name="labirinto1" type="StaticBody2D" parent="." unique_id=1330852521]
+position = Vector2(615, -645)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto1" unique_id=525730526]
+polygon = PackedVector2Array(0, 0, -20, 0, -20, 19, -39, 19, -39, 21, -1, 21, -1, 77, 36, 77, 36, 95, 18, 95, 18, 114, -38, 114, -38, 95, -57, 95, -57, 59, -38, 59, -38, 57, -58, 57, -58, 96, -39, 96, -39, 116, 20, 116, 20, 97, 36, 97, 36, 135, 150, 135, 150, 154, 190, 154, 190, 95, 171, 95, 171, 76, 150, 76, 150, 95, 132, 95, 132, 97, 152, 97, 152, 78, 169, 78, 169, 97, 188, 97, 188, 151, 152, 151, 152, 133, 38, 132, 38, 116, 57, 116, 57, 97, 76, 97, 76, 78, 95, 78, 95, 59, 114, 59, 114, 57, 75, 57, 75, 59, 93, 59, 93, 76, 74, 76, 74, 95, 55, 95, 55, 114, 38, 114, 38, 76, 1, 76, 1, 59, 55, 59, 55, 77, 57, 77, 57, 57, 19, 57, 19, 40, 38, 40, 38, 2, 55, 2, 55, 40, 131, 40, 131, 78, 133, 78, 133, 38, 114, 38, 114, 19, 94, 19, 94, 21, 112, 21, 112, 38, 57, 38, 57, 21, 76, 21, 76, 2, 95, 2, 95, -38, 57, -38, 57, -54, 55, -54, 55, -36, 93, -36, 93, 0, 74, 0, 74, 19, 57, 19, 57, 0, 36, 0, 36, 38, 17, 38, 17, 57, 1, 57, 1, 19, -18, 19, -18, 2, 0, 2)
+
+[node name="labirinto2" type="StaticBody2D" parent="." unique_id=1876979785]
+position = Vector2(484, -512)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto2" unique_id=1583579596]
+polygon = PackedVector2Array(0, 0, 0, 2, 16, 2, 16, 21, 35, 21, 35, 58, 54, 58, 54, 77, 73, 77, 73, 95, 54, 95, 54, 97, 74, 97, 74, 77, 112, 77, 112, 19, 54, 19, 54, 39, 73, 39, 73, 58, 93, 58, 93, 38, 92, 38, 92, 57, 74, 57, 74, 38, 56, 38, 56, 21, 111, 21, 111, 76, 56, 76, 56, 57, 37, 57, 37, 2, 130, 2, 130, 39, 131, 39, 131, 21, 148, 21, 148, 39, 150, 39, 150, 21, 167, 21, 167, 76, 150, 76, 150, 57, 130, 57, 130, 58, 148, 58, 148, 96, 188, 96, 188, 76, 186, 76, 186, 94, 151, 94, 151, 78, 169, 78, 169, 58, 205, 58, 205, 96, 302, 96, 302, 77, 319, 77, 319, 96, 321, 96, 321, 38, 281, 38, 281, 58, 283, 58, 283, 39, 319, 39, 319, 76, 302, 76, 302, 57, 300, 57, 300, 95, 283, 95, 283, 76, 281, 76, 281, 95, 207, 95, 207, 57, 169, 57, 169, 39, 224, 39, 224, 77, 264, 77, 264, 38, 262, 38, 262, 76, 245, 76, 245, 38, 243, 38, 243, 76, 226, 76, 226, 38, 207, 38, 207, 21, 264, 21, 264, 19, 206, 19, 206, 38, 188, 38, 188, 19, 186, 19, 186, 38, 169, 38, 169, 19, 150, 19, 150, 0, 149, 0, 149, 19, 131, 19, 131, 0, 35, 0, 35, 18, 35, 19, 17, 19, 17, -36, 35, -36, 35, -17, 74, -17, 74, -19, 37, -19, 37, -38, 16, -38, 16, 0)
+
+[node name="labirinto3" type="StaticBody2D" parent="." unique_id=1436569997]
+position = Vector2(484, -626)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto3" unique_id=773209493]
+polygon = PackedVector2Array(0, 0, 16, 0, 16, -19, 35, -19, 35, -36, 16, -36, 16, -57, 56, -57, 56, -38, 73, -38, 73, -57, 131, -57, 131, -38, 167, -38, 167, -55, 149, -55, 149, -57, 169, -57, 169, -38, 207, -38, 207, -36, 150, -36, 150, 1, 148, 1, 148, -36, 130, -36, 130, -55, 74, -55, 74, -38, 112, -38, 112, -36, 93, -36, 93, -17, 92, -17, 92, -36, 54, -36, 54, -55, 18, -55, 18, -38, 37, -38, 37, 0, 73, 0, 73, -17, 54, -17, 54, -19, 74, -19, 74, 19, 112, 19, 112, 76, 131, 76, 131, 78, 111, 78, 111, 59, 92, 59, 92, 57, 111, 57, 111, 21, 73, 21, 73, 2, 56, 2, 56, 77, 54, 77, 54, 2, 36, 2, 35, 2, 35, -17, 18, -17, 18, 2, 0, 2)
+
+[node name="labirinto4" type="StaticBody2D" parent="." unique_id=2005657456]
+position = Vector2(805, -645)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto4" unique_id=1806539264]
+polygon = PackedVector2Array(0, 0, 0, 40, -21, 40, -21, 21, -38, 21, -38, 57, 0, 57, 0, 77, -2, 77, -2, 59, -40, 59, -40, 21, -58, 21, -58, 19, -40, 19, -40, 2, -58, 2, -58, 0, -38, 0, -38, 19, -21, 19, -21, 0, -19, 0, -19, 38, -2, 38, -2, 0)
+
+[node name="labirinto5" type="StaticBody2D" parent="." unique_id=192369542]
+position = Vector2(803, -683)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto5" unique_id=368955379]
+polygon = PackedVector2Array(0, 0, 0, 19, -17, 19, -17, 0, -38, 0, -38, 19, -74, 19, -74, 0, -76, 0, -76, 40, -74, 40, -74, 21, -36, 21, -36, 2, -19, 2, -19, 21, 2, 21, 2, 0)
+
+[node name="labirinto6" type="StaticBody2D" parent="." unique_id=818136044]
+position = Vector2(690, -531)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto6" unique_id=679254170]
+polygon = PackedVector2Array(0, 0, 0, 2, 20, 2, 20, -17, 37, -17, 37, 2, 94, 2, 94, 20, 96, 20, 96, 0, 39, 0, 39, -19, 18, -19, 18, 0)
+
+[node name="labirinto7" type="StaticBody2D" parent="." unique_id=1654355096]
+position = Vector2(484, -607)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto7" unique_id=1012745997]
+polygon = PackedVector2Array(0, 0, 0, 2, 35, 2, 35, 38, 18, 38, 18, 19, 16, 19, 16, 40, 37, 40, 37, 0)
+
+[node name="labirinto8" type="StaticBody2D" parent="." unique_id=570743406]
+position = Vector2(500, -474)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto8" unique_id=116259034]
+position = Vector2(-35, 19)
+polygon = PackedVector2Array(35, -19, 35, 38, 18, 38, 18, 40, 37, 40, 37, -19)
+
+[node name="labirinto9" type="StaticBody2D" parent="." unique_id=1492077101]
+position = Vector2(519, -436)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto9" unique_id=1880258331]
+position = Vector2(-35, 19)
+polygon = PackedVector2Array(35, -19, 35, 18, 37, 18, 37, -19)
+
+[node name="labirinto10" type="StaticBody2D" parent="." unique_id=1820726720]
+position = Vector2(746, -700)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto10" unique_id=289402601]
+position = Vector2(-35, 19)
+polygon = PackedVector2Array(35, -19, 35, 0, 37, 0, 37, -19)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1780850956]
+position = Vector2(576, -417)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1867437156]
+polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 1, 0, 1)

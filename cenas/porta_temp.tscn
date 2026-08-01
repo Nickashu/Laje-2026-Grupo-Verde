@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://07xtigf77vbp"]
+
+[ext_resource type="Script" uid="uid://e7wn6muhpu4l" path="res://scripts/porta_temp.gd" id="1_e00t1"]
+[ext_resource type="Texture2D" uid="uid://c6qpmcbo02cvp" path="res://assets/porta_aberta.png" id="1_rauc1"]
+[ext_resource type="Texture2D" uid="uid://b16bybede5u5l" path="res://assets/porta_fechada.png" id="3_8punx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e00t1"]
+size = Vector2(32, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8punx"]
+size = Vector2(32, 9)
+
+[node name="porta_temp" type="Area2D" unique_id=116038246]
+script = ExtResource("1_e00t1")
+porta_aberta = ExtResource("1_rauc1")
+porta_fechada = ExtResource("3_8punx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1109783712]
+texture = ExtResource("1_rauc1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1691416427]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_e00t1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2088478475]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=230435687]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_8punx")
+
+[node name="Timer" type="Timer" parent="." unique_id=118857432]

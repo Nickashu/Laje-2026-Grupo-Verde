@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dlbnbn2dnea1k"]
+[gd_scene format=3 uid="uid://dxcc0n8r0xdx4"]
 
-[ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://scripts/character_body_2d.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://b7ofqur6b53vn" path="res://assets/spritesPlayer.png" id="2_onrkg"]
 [ext_resource type="Script" uid="uid://cx03i6yy6l6i1" path="res://addons/area_of_sight_2d/area_of_sight_agent_2d.gd" id="3_i3pqv"]
 
@@ -181,13 +181,13 @@ animation = &"andando_esquerda"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_2hs0m"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_onrkg")
-blend_point_0/pos = Vector2(0, 1)
+blend_point_0/pos = Vector2(0, 0.90000004)
 blend_point_1/node = SubResource("AnimationNodeAnimation_i3pqv")
-blend_point_1/pos = Vector2(0.90000004, 0)
+blend_point_1/pos = Vector2(1, 0)
 blend_point_2/node = SubResource("AnimationNodeAnimation_hqtel")
-blend_point_2/pos = Vector2(0, -1)
+blend_point_2/pos = Vector2(0, -0.90000004)
 blend_point_3/node = SubResource("AnimationNodeAnimation_sweqy")
-blend_point_3/pos = Vector2(-0.90000004, 0)
+blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1jxqw"]
@@ -247,14 +247,6 @@ script = ExtResource("1_4flbx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646474947]
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_onrkg")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2078607136]
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1396642369]
 texture = ExtResource("2_onrkg")
