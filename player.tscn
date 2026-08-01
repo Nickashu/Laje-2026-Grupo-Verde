@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://b7ofqur6b53vn" path="res://assets/spritesPlayer.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://cx03i6yy6l6i1" path="res://addons/area_of_sight_2d/area_of_sight_agent_2d.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(14, 4)
@@ -238,6 +239,8 @@ transitions = ["Start", "Parado", SubResource("AnimationNodeStateMachineTransiti
 graph_offset = Vector2(-126, 22)
 
 [node name="Player" type="CharacterBody2D" unique_id=482596540]
+z_index = 1
+collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_4flbx")
 
@@ -268,3 +271,9 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Andando/blend_position = Vector2(-0.00055527687, 0.98734176)
 parameters/Parado/blend_position = Vector2(-0.0011876225, -0.014217973)
+
+[node name="AreaOfSightAgent2D" type="Area2D" parent="." unique_id=1031968910 node_paths=PackedStringArray("parent_node")]
+position = Vector2(0, 14)
+script = ExtResource("3_i3pqv")
+parent_node = NodePath("..")
+target_points_amount = 32
