@@ -2,15 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
 [ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
-[ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://player.tscn" id="2_epxgt"]
+[ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
 [ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
-[ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://interagível.tscn" id="3_epxgt"]
-[ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://alavanca_roxa.tscn" id="6_yn1xw"]
-[ext_resource type="PackedScene" uid="uid://chipi86gsnwqx" path="res://alavanca_preta.tscn" id="7_yn1xw"]
-[ext_resource type="PackedScene" uid="uid://byrb1v8l06cex" path="res://interagível_2.tscn" id="8_hc7gj"]
-[ext_resource type="PackedScene" uid="uid://1i365mculgdr" path="res://alavanca_amarela.tscn" id="8_y1cof"]
-[ext_resource type="PackedScene" uid="uid://c5nf3444rh01x" path="res://interagível_3.tscn" id="10_p8exr"]
-[ext_resource type="PackedScene" uid="uid://dlrtav2uxish4" path="res://interagível_4.tscn" id="11_qfgno"]
+[ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
+[ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
+[ext_resource type="PackedScene" uid="uid://chipi86gsnwqx" path="res://cenas/alavanca_preta.tscn" id="7_yn1xw"]
+[ext_resource type="PackedScene" uid="uid://byrb1v8l06cex" path="res://cenas/interagível_2.tscn" id="8_hc7gj"]
+[ext_resource type="PackedScene" uid="uid://1i365mculgdr" path="res://cenas/alavanca_amarela.tscn" id="8_y1cof"]
+[ext_resource type="PackedScene" uid="uid://c5nf3444rh01x" path="res://cenas/interagível_3.tscn" id="10_p8exr"]
+[ext_resource type="PackedScene" uid="uid://dlrtav2uxish4" path="res://cenas/interagível_4.tscn" id="11_qfgno"]
+[ext_resource type="Script" uid="uid://br7f84lof1c4l" path="res://scripts/camera_2d.gd" id="12_la5s6"]
+[ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
+[ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
+[ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
 size = Vector2(102, 56)
@@ -82,6 +86,42 @@ position = Vector2(1155, -708)
 position = Vector2(924, -453)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
+zoom = Vector2(3, 3)
+limit_left = -410
+limit_top = -1027
+limit_right = 1560
+limit_bottom = 601
+script = ExtResource("12_la5s6")
+player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=759786513]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=426128318 node_paths=PackedStringArray("player", "camera")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 1, 0, 0.5921569)
+script = ExtResource("13_3x8ur")
+player = NodePath("../../Player")
+camera = NodePath("../../Camera2D")
+
+[node name="porta_temp" parent="." unique_id=116038246 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
+position = Vector2(425, -599)
+filtro = NodePath("../CanvasLayer/ColorRect")
+
+[node name="porta_temp2" parent="." unique_id=2035996300 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
+position = Vector2(558, -9)
+filtro = NodePath("../CanvasLayer/ColorRect")
+
+[node name="porta_perm" parent="." unique_id=307799865 node_paths=PackedStringArray("filtro") instance=ExtResource("15_y1h0r")]
+position = Vector2(159, -46)
+scale = Vector2(2.5031078, 0.8333342)
+filtro = NodePath("../CanvasLayer/ColorRect")
 
 [node name="labirinto1" type="StaticBody2D" parent="." unique_id=1330852521]
 position = Vector2(615, -645)

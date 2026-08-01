@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://chipi86gsnwqx"]
 
-[ext_resource type="Script" uid="uid://c6ex4oqhitsva" path="res://alavanca_preta.gd" id="1_xmgfy"]
+[ext_resource type="Script" uid="uid://c6ex4oqhitsva" path="res://scripts/alavanca_preta.gd" id="1_xmgfy"]
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_oqkbn"]
 [ext_resource type="Texture2D" uid="uid://bkiurxgyr0sbn" path="res://assets/LaserGate1.PNG" id="3_1cqsl"]
-[ext_resource type="Script" uid="uid://dsqiv35bwu6e6" path="res://porta_preta_1.gd" id="4_ubgt5"]
-[ext_resource type="Script" uid="uid://cb56ymuxud145" path="res://porta_preta_2.gd" id="5_ubgt5"]
+[ext_resource type="Script" uid="uid://dsqiv35bwu6e6" path="res://scripts/porta_preta_1.gd" id="4_ubgt5"]
+[ext_resource type="Script" uid="uid://cb56ymuxud145" path="res://scripts/porta_preta_2.gd" id="5_ubgt5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqwjx"]
 radius = 16.124516

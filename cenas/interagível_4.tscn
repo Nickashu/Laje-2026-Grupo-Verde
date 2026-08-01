@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://c73d8q8eb0qjj"]
+[gd_scene format=3 uid="uid://dlrtav2uxish4"]
 
-[ext_resource type="Script" uid="uid://b13qfv0gwkbke" path="res://interagível.gd" id="1_dcf8q"]
-[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_wqwjx"]
+[ext_resource type="Script" uid="uid://duviq6dhm62db" path="res://scripts/interagível_4.gd" id="1_x27w4"]
+[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_nj0gp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqwjx"]
 radius = 16.124516
 
-[node name="interagível" type="Area2D" unique_id=2081020138]
-script = ExtResource("1_dcf8q")
+[node name="interagível4" type="Area2D" unique_id=2081020138]
+script = ExtResource("1_x27w4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502199384]
 position = Vector2(0, 20)
@@ -15,7 +15,7 @@ shape = SubResource("CircleShape2D_wqwjx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=21109579]
 scale = Vector2(0.215, 0.215)
-texture = ExtResource("2_wqwjx")
+texture = ExtResource("2_nj0gp")
 
 [node name="Label" type="Label" parent="." unique_id=737223221]
 offset_left = -6.0

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxcc0n8r0xdx4"]
 
-[ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://character_body_2d.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://mnuy2kmpxue4" path="res://scripts/character_body_2d.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://b7ofqur6b53vn" path="res://assets/spritesPlayer.png" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
@@ -244,14 +244,6 @@ script = ExtResource("1_4flbx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1646474947]
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_onrkg")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2078607136]
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1396642369]
 texture = ExtResource("2_onrkg")

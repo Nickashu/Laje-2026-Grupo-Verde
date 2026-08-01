@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbgarx8l0kwdv"]
 
-[ext_resource type="Script" uid="uid://jvoea2dxii45" path="res://canvas.gd" id="1_75aqd"]
+[ext_resource type="Script" uid="uid://jvoea2dxii45" path="res://scripts/canvas.gd" id="1_75aqd"]
 
 [node name="PopupsTeste" type="Control" unique_id=1474392959]
 layout_mode = 3

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c66mo0tov3wau"]
 
 [ext_resource type="Texture2D" uid="uid://bkiurxgyr0sbn" path="res://assets/LaserGate1.PNG" id="1_v8ubn"]
-[ext_resource type="Script" uid="uid://brj0vtd0l5hiq" path="res://porta_1.gd" id="2_1l6og"]
+[ext_resource type="Script" uid="uid://brj0vtd0l5hiq" path="res://scripts/porta_1.gd" id="2_1l6og"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1l6og"]
 size = Vector2(96, 40)
