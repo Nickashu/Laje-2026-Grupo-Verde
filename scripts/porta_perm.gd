@@ -1,3 +1,4 @@
+class_name Porta_perm
 extends Area2D
 
 

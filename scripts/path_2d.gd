@@ -1,21 +1,18 @@
 extends Path2D
+
 @onready var enemy = $PathFollow2D/Enemy
 @onready var path = $PathFollow2D
-@onready var timer:= $PathFollow2D/Timer
 @export var speed:= 100.0
+
 var waiting: bool = false
 
-
-var indo:= true
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if enemy.frozen or waiting:
+	if enemy.frozen:
 		return
+		
 	ray()
 	
 	if waiting:
@@ -24,19 +21,23 @@ func _process(delta: float) -> void:
 	path.progress += delta * speed
 	if (path.progress_ratio == 1 or path.progress_ratio == 0 and path.loop == false):
 		speed = -speed
-		
-		
 
 func ray() -> void:
-	var space_state = get_world_2d().direct_space_state
-	var destino = enemy.global_position + (enemy.look_direction * 40)
-	var query = PhysicsRayQueryParameters2D.create(enemy.global_position, destino, 101)
+	var space_state:= get_world_2d().direct_space_state
+	
+	var destino: Vector2 = enemy.global_position + (enemy.look_direction * 20)
+	
+	var query:= PhysicsRayQueryParameters2D.create(enemy.global_position, destino, 0b1100)
 	query.collide_with_areas = true
-	var result = space_state.intersect_ray(query)
+	query.exclude = [enemy.get_rid()]
+	
+	var result:= space_state.intersect_ray(query)
+	
 	if result:
-		timer.start()
-		waiting = true
-		return
-
-func _on_timer_timeout() -> void:
+		var porta = result.collider as Porta_temp
+		if porta != null:
+			if porta.colisao_fisica.disabled == false:
+				waiting = true
+				return
+	
 	waiting = false

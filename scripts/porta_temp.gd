@@ -1,3 +1,5 @@
+class_name Porta_temp
+
 extends Area2D
 
 
