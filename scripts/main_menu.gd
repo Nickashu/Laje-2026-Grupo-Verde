@@ -8,4 +8,5 @@ func _on_play_pressed() -> void:
 	transicao.load_scene("res://cenas/cena_teste.tscn")
 
 func _on_quit_pressed() -> void:
+	select.play()
 	get_tree().quit()

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bb7321ojalvca"]
 
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
-[ext_resource type="PackedScene" uid="uid://b6t062ufwqxy6" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
+[ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
 [ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
 [ext_resource type="PackedScene" uid="uid://chipi86gsnwqx" path="res://cenas/alavanca_preta.tscn" id="7_yn1xw"]
@@ -310,7 +310,7 @@ energy = 0.5
 texture = ExtResource("23_el17i")
 
 [node name="PointLight2D5" type="PointLight2D" parent="luz" unique_id=423580810]
-position = Vector2(644, -761)
+position = Vector2(708, -757)
 energy = 0.5
 texture = ExtResource("23_el17i")
 
@@ -378,12 +378,26 @@ color = Color(0.30692267, 0.3069227, 0.3069227, 1)
 position = Vector2(910, 77)
 
 [node name="portaroxa2" parent="sistema_roxo/alavancaroxa" index="4" unique_id=1661673552]
-position = Vector2(-52, -628)
+position = Vector2(-89, -628)
 
 [node name="sistema_preto" type="Node2D" parent="." unique_id=130969771]
 
 [node name="alavanca_preta" parent="sistema_preto" unique_id=1060394162 instance=ExtResource("7_yn1xw")]
 position = Vector2(644, -776)
+
+[node name="CollisionShape2D" parent="sistema_preto/alavanca_preta" index="0" unique_id=502199384]
+position = Vector2(63.76001, 20)
+
+[node name="Sprite2D" parent="sistema_preto/alavanca_preta" index="1" unique_id=21109579]
+position = Vector2(63.760017, 0)
+
+[node name="Label" parent="sistema_preto/alavanca_preta" index="2" unique_id=737223221]
+offset_left = 57.76001
+offset_right = 77.76001
+
+[node name="portapreta2" parent="sistema_preto/alavanca_preta" index="4" unique_id=1803371403]
+position = Vector2(189, 37.999996)
+scale = Vector2(0.5336763, 0.44)
 
 [node name="sistema_amarelo" type="Node2D" parent="." unique_id=2137297891]
 
@@ -462,3 +476,4 @@ position = Vector2(576, -417)
 polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 1, 0, 1)
 
 [editable path="sistema_roxo/alavancaroxa"]
+[editable path="sistema_preto/alavanca_preta"]
