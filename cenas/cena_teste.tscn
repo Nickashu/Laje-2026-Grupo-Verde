@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
 [ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
+[ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
 [ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
@@ -23,8 +24,19 @@ size = Vector2(102, 56)
 [node name="Node2D" type="Node2D" unique_id=887278194]
 
 [node name="mapa rascunho" type="Sprite2D" parent="." unique_id=1996792474]
+visible = false
 position = Vector2(594, -246)
 texture = ExtResource("1_v7a43")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=982770931]
+offset_left = -280.0
+offset_top = -1006.0
+offset_right = 1520.0
+offset_bottom = 494.0
+color = Color(0.09803922, 0.11372549, 0.32156864, 1)
+
+[node name="TerrainManager" parent="." unique_id=1158589891 instance=ExtResource("2_krtrm")]
+position = Vector2(-29, -412)
 
 [node name="alavancaroxa" parent="." unique_id=720137343 instance=ExtResource("6_yn1xw")]
 position = Vector2(910, 77)
@@ -75,7 +87,7 @@ position = Vector2(879, -605)
 polygon = PackedVector2Array(-36, -116, -265, -116, -265, -95, -57, -95, -57, 38, -36, 38, -36, 0)
 
 [node name="interagível" parent="." unique_id=2081020138 instance=ExtResource("3_epxgt")]
-position = Vector2(284, -605)
+position = Vector2(284, -587)
 
 [node name="interagível2" parent="." unique_id=47951355 instance=ExtResource("8_hc7gj")]
 position = Vector2(567, -490)
