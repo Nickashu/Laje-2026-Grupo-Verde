@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bs7lmebj7omi0" path="res://scripts/main_menu.gd" id="1_06t4h"]
 [ext_resource type="AudioStream" uid="uid://bq0fi23wwbi4j" path="res://assets/Assets - Sonorização/select2.wav" id="2_dplvp"]
+[ext_resource type="PackedScene" uid="uid://coif6fgu27xtc" path="res://cenas/transição.tscn" id="3_6r73n"]
 
 [node name="MainMenu" type="Control" unique_id=288828817]
 layout_mode = 3
@@ -30,6 +31,8 @@ text = "Quit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1641024993]
 stream = ExtResource("2_dplvp")
+
+[node name="Transição" parent="." unique_id=1853033744 instance=ExtResource("3_6r73n")]
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
