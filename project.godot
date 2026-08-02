@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo_Grupo_Verde"
-run/main_scene="uid://bb7321ojalvca"
+run/main_scene="uid://th13sjrgss2l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
