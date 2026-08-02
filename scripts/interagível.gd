@@ -9,11 +9,12 @@ func _ready():
 func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("interagir"):  # Verifica se a tecla "E" foi pressionada
 		Canvas.LogPopup(1)
-		Player.frozen = true
+		player.frozen = true
+		
 
 	if player_in_area and Input.is_action_just_pressed("ui_cancel"): #or Input.is_action_just_pressed("click"):  # Verifica se a tecla "ESC" foi pressionada
 		Canvas.HideLogPopup()
-		Player.frozen = false
+		player.frozen = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Verifica se o corpo que entrou é o jogador

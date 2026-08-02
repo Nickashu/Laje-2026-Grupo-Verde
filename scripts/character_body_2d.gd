@@ -13,11 +13,12 @@ const ACELERACAO := 1200.0
 const ATRITO := 1000.0
 
 
-var frozen := false
+var frozen
 var ultima_direcao := Vector2.UP
 
 
 func _ready() -> void:
+	frozen = false
 
 	if animation_tree == null:
 		push_error(
