@@ -5,7 +5,7 @@ extends Control
 
 func _on_play_pressed() -> void:
 	select.play()
-	transicao.load_scene("res://cenas/cena_teste.tscn")
+	transicao.load_scene("res://cenas/cutscene.tscn")
 
 func _on_quit_pressed() -> void:
 	select.play()

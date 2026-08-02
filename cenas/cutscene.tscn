@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://c7ei86h2tqywl"]
 
-[ext_resource type="Script" uid="uid://50i1ly3bmlf7" path="res://scripts/cutscene.gd" id="1_8dw4w"]
+[ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_8dw4w"]
 [ext_resource type="Texture2D" uid="uid://c8wr81c74x15f" path="res://assets/cutscene provisória/cutscene1.png" id="1_vheyj"]
 [ext_resource type="Texture2D" uid="uid://c7vinndrj4bym" path="res://assets/cutscene provisória/cutscene2.png" id="2_xinj7"]
 [ext_resource type="Texture2D" uid="uid://m6yfr03vhodd" path="res://assets/cutscene provisória/cutscene3.png" id="3_8dw4w"]
 [ext_resource type="Texture2D" uid="uid://c7wx5vmxnybh7" path="res://assets/cutscene provisória/cutscene4.png" id="4_8ug67"]
+[ext_resource type="PackedScene" uid="uid://coif6fgu27xtc" path="res://cenas/transição.tscn" id="6_8ug67"]
 
 [sub_resource type="Animation" id="Animation_a8hyk"]
 length = 0.001
@@ -221,3 +222,5 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(950, 439.99997)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("4_8ug67")
+
+[node name="Transição" parent="." unique_id=1853033744 instance=ExtResource("6_8ug67")]
