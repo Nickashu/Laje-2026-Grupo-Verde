@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://bb7321ojalvca"]
 
+[ext_resource type="Script" uid="uid://dbu13q6luxulv" path="res://cenas/cena_teste.gd" id="1_cxuch"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
 [ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
@@ -12,6 +13,7 @@
 [ext_resource type="Script" uid="uid://br7f84lof1c4l" path="res://scripts/camera_2d.gd" id="12_la5s6"]
 [ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
+[ext_resource type="AudioStream" uid="uid://chckuygwp1utb" path="res://assets/Assets - Sonorização/music.wav" id="15_el17i"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
 [ext_resource type="PackedScene" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
@@ -69,6 +71,7 @@ tags = {
 }
 
 [node name="Node2D" type="Node2D" unique_id=887278194]
+script = ExtResource("1_cxuch")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=982770931]
 offset_left = -280.0
@@ -280,6 +283,10 @@ stream = ExtResource("23_bqy58")
 [node name="alavanca" type="AudioStreamPlayer2D" parent="sons" unique_id=722279221]
 stream = ExtResource("25_0b3j6")
 
+[node name="music" type="AudioStreamPlayer2D" parent="sons" unique_id=1660950191]
+stream = ExtResource("15_el17i")
+autoplay = true
+
 [node name="interagiveis" type="Node2D" parent="." unique_id=588939985]
 
 [node name="logs" type="AudioStreamPlayer2D" parent="interagiveis" unique_id=1696128937]
@@ -468,6 +475,8 @@ position = Vector2(910, 77)
 
 [node name="portaroxa2" parent="alavancaroxa" index="4" unique_id=1661673552]
 position = Vector2(-89, -628)
+
+[connection signal="finished" from="sons/music" to="." method="_on_music_finished"]
 
 [editable path="alavanca_preta"]
 [editable path="alavancaroxa"]
