@@ -8,6 +8,7 @@ script = ExtResource("1_cc0ts")
 direcoes_giro = Array[Vector2]([Vector2(0, -1), Vector2(0, 1)])
 
 [node name="Enemy" parent="." unique_id=1941488000 instance=ExtResource("2_5rt16")]
+collision_mask = 5
 comportamento = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=403153359]

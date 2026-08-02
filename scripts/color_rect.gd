@@ -49,6 +49,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("troca_de_modo"):
+		$"../../sons/troca_de_modo".play()
 		alternar_filtro()
 
 

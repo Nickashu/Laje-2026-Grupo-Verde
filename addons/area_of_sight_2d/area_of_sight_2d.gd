@@ -118,6 +118,7 @@ func _process(delta : float) -> void:
 func _physics_process(delta : float) -> void:
 	_set_points()
 	_check_collisions()
+	
 
 # Method that adds edge_color to the editor inspector
 # when param show_edge is enabled.
