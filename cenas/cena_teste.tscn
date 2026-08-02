@@ -372,38 +372,6 @@ texture = ExtResource("23_el17i")
 [node name="CanvasModulate" type="CanvasModulate" parent="luz" unique_id=1397525784]
 color = Color(0.30692267, 0.3069227, 0.3069227, 1)
 
-[node name="sistema_roxo" type="Node2D" parent="." unique_id=1710090565]
-
-[node name="alavancaroxa" parent="sistema_roxo" unique_id=720137343 instance=ExtResource("6_yn1xw")]
-position = Vector2(910, 77)
-
-[node name="portaroxa2" parent="sistema_roxo/alavancaroxa" index="4" unique_id=1661673552]
-position = Vector2(-89, -628)
-
-[node name="sistema_preto" type="Node2D" parent="." unique_id=130969771]
-
-[node name="alavanca_preta" parent="sistema_preto" unique_id=1060394162 instance=ExtResource("7_yn1xw")]
-position = Vector2(644, -776)
-
-[node name="CollisionShape2D" parent="sistema_preto/alavanca_preta" index="0" unique_id=502199384]
-position = Vector2(63.76001, 20)
-
-[node name="Sprite2D" parent="sistema_preto/alavanca_preta" index="1" unique_id=21109579]
-position = Vector2(63.760017, 0)
-
-[node name="Label" parent="sistema_preto/alavanca_preta" index="2" unique_id=737223221]
-offset_left = 57.76001
-offset_right = 77.76001
-
-[node name="portapreta2" parent="sistema_preto/alavanca_preta" index="4" unique_id=1803371403]
-position = Vector2(189, 37.999996)
-scale = Vector2(0.5336763, 0.44)
-
-[node name="sistema_amarelo" type="Node2D" parent="." unique_id=2137297891]
-
-[node name="alavanca_amarela" parent="sistema_amarelo" unique_id=263928888 instance=ExtResource("8_y1cof")]
-position = Vector2(964, -453)
-
 [node name="labirinto" type="Node2D" parent="." unique_id=2118216148]
 
 [node name="labirinto1" type="StaticBody2D" parent="labirinto" unique_id=1330852521]
@@ -475,5 +443,31 @@ position = Vector2(576, -417)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="labirinto/StaticBody2D" unique_id=1867437156]
 polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 1, 0, 1)
 
-[editable path="sistema_roxo/alavancaroxa"]
-[editable path="sistema_preto/alavanca_preta"]
+[node name="alavanca_preta" parent="." unique_id=1060394162 instance=ExtResource("7_yn1xw")]
+position = Vector2(644.00006, -776)
+
+[node name="CollisionShape2D" parent="alavanca_preta" index="0" unique_id=502199384]
+position = Vector2(63.76001, 20)
+
+[node name="Sprite2D" parent="alavanca_preta" index="1" unique_id=21109579]
+position = Vector2(63.760017, 0)
+
+[node name="Label" parent="alavanca_preta" index="2" unique_id=737223221]
+offset_left = 57.76001
+offset_right = 77.76001
+
+[node name="portapreta2" parent="alavanca_preta" index="4" unique_id=1803371403]
+position = Vector2(189, 37.999996)
+scale = Vector2(0.5336763, 0.44)
+
+[node name="alavanca_amarela" parent="." unique_id=263928888 instance=ExtResource("8_y1cof")]
+position = Vector2(964, -453)
+
+[node name="alavancaroxa" parent="." unique_id=720137343 instance=ExtResource("6_yn1xw")]
+position = Vector2(910, 77)
+
+[node name="portaroxa2" parent="alavancaroxa" index="4" unique_id=1661673552]
+position = Vector2(-89, -628)
+
+[editable path="alavanca_preta"]
+[editable path="alavancaroxa"]
