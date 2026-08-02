@@ -1,6 +1,8 @@
 extends Path2D
 
 @onready var enemy = $PathFollow2D/Enemy
+@onready var enemy2 = $PathFollow2D2/Enemy
+@onready var enemy3 = $PathFollow2D3/Enemy
 @onready var path = $PathFollow2D
 @export var speed:= 100.0
 

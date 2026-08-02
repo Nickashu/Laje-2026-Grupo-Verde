@@ -109,7 +109,7 @@ position = Vector2(879, -605)
 polygon = PackedVector2Array(-44, -108, -268, -108, -268, -95, -57, -95, -57, 33, -44, 33, -44, 0)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
-position = Vector2(855, -516)
+position = Vector2(43, -4)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
@@ -184,7 +184,7 @@ position = Vector2(1090, -675)
 [node name="andando" type="Node2D" parent="inimigos" unique_id=452969534]
 
 [node name="Path2D" type="Path2D" parent="inimigos/andando" unique_id=528488528]
-position = Vector2(-46, -6)
+position = Vector2(-64, -8)
 curve = SubResource("Curve2D_krtrm")
 script = ExtResource("16_krtrm")
 
@@ -194,7 +194,24 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=853667322 instance=ExtResource("17_krtrm")]
-position = Vector2(-22, 2)
+collision_mask = 3
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="inimigos/andando/Path2D" unique_id=1435363334]
+position = Vector2(205.15967, -410.00192)
+progress = 250.0
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D/PathFollow2D2" unique_id=1941488000 instance=ExtResource("17_krtrm")]
+collision_mask = 3
+
+[node name="PathFollow2D3" type="PathFollow2D" parent="inimigos/andando/Path2D" unique_id=204810498]
+position = Vector2(204.31932, -160.001)
+progress = 500.0
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D/PathFollow2D3" unique_id=1674059527 instance=ExtResource("17_krtrm")]
 collision_mask = 3
 
 [node name="Path2D2" type="Path2D" parent="inimigos/andando" unique_id=605084401]
