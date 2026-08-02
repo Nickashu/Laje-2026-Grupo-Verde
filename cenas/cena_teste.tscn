@@ -1,10 +1,7 @@
 [gd_scene format=4 uid="uid://bb7321ojalvca"]
 
-[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
-[ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
 [ext_resource type="PackedScene" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
-[ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
 [ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
 [ext_resource type="PackedScene" uid="uid://chipi86gsnwqx" path="res://cenas/alavanca_preta.tscn" id="7_yn1xw"]
@@ -18,16 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
 [ext_resource type="PackedScene" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
-[ext_resource type="PackedScene" uid="uid://oa3wbsfgfi38" path="res://cenas/estacionário.tscn" id="17_a0uco"]
+[ext_resource type="PackedScene" uid="uid://4ln3r4xv2xwx" path="res://cenas/estacionário.tscn" id="17_a0uco"]
 [ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="17_krtrm"]
 [ext_resource type="AudioStream" uid="uid://cdddsikfh6twm" path="res://assets/Assets - Sonorização/door1.wav" id="20_3rtvq"]
 [ext_resource type="AudioStream" uid="uid://cvea152irb2p4" path="res://assets/Assets - Sonorização/door2_fechando.wav" id="21_bqy58"]
 [ext_resource type="AudioStream" uid="uid://bwbosegn7mfk" path="res://assets/Assets - Sonorização/log.wav" id="22_el17i"]
 [ext_resource type="AudioStream" uid="uid://yn6dof8caj45" path="res://assets/Assets - Sonorização/step.wav" id="23_bqy58"]
+[ext_resource type="Texture2D" uid="uid://rynlr81fa7vr" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="23_el17i"]
 [ext_resource type="AudioStream" uid="uid://dpvu2rik0lgso" path="res://assets/Assets - Sonorização/botao_alavanca.wav" id="25_0b3j6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
-size = Vector2(37, 15)
 
 [sub_resource type="Curve2D" id="Curve2D_krtrm"]
 _data = {
@@ -75,11 +70,6 @@ tags = {
 
 [node name="Node2D" type="Node2D" unique_id=887278194]
 
-[node name="mapa rascunho" type="Sprite2D" parent="." unique_id=1996792474]
-visible = false
-position = Vector2(594, -246)
-texture = ExtResource("1_v7a43")
-
 [node name="ColorRect" type="ColorRect" parent="." unique_id=982770931]
 offset_left = -280.0
 offset_top = -1006.0
@@ -99,21 +89,6 @@ position = Vector2(644, -776)
 
 [node name="alavanca_amarela" parent="." unique_id=263928888 instance=ExtResource("8_y1cof")]
 position = Vector2(964, -453)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=996967]
-position = Vector2(1275.0001, 1105.0001)
-scale = Vector2(9.046875, 5.0468755)
-texture = ExtResource("1_epxgt")
-
-[node name="parede amogus" type="StaticBody2D" parent="." unique_id=903957146]
-position = Vector2(-409, -84)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="parede amogus" unique_id=1032558302]
-shape = SubResource("RectangleShape2D_epxgt")
-
-[node name="Sprite2D" type="Sprite2D" parent="parede amogus" unique_id=2071983443]
-scale = Vector2(3.5, 2)
-texture = ExtResource("2_r1n86")
 
 [node name="parede externa" type="StaticBody2D" parent="." unique_id=1041584475]
 position = Vector2(-48, -36)
@@ -138,18 +113,6 @@ position = Vector2(879, -605)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede 3" unique_id=255414389]
 polygon = PackedVector2Array(-44, -108, -268, -108, -268, -95, -57, -95, -57, 33, -44, 33, -44, 0)
-
-[node name="interagível" parent="." unique_id=2081020138 instance=ExtResource("3_epxgt")]
-position = Vector2(284, -587)
-
-[node name="interagível2" parent="." unique_id=47951355 instance=ExtResource("8_hc7gj")]
-position = Vector2(567, -490)
-
-[node name="interagível3" parent="." unique_id=1275376086 instance=ExtResource("10_p8exr")]
-position = Vector2(1155, -708)
-
-[node name="interagível4" parent="." unique_id=1114545296 instance=ExtResource("11_qfgno")]
-position = Vector2(924, -453)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
 position = Vector2(439, -575)
@@ -305,7 +268,6 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=853667322 instance=ExtResource("17_krtrm")]
-collision_mask = 5
 
 [node name="Path2D2" type="Path2D" parent="inimigos/andando" unique_id=605084401]
 position = Vector2(221, -30)
@@ -318,7 +280,6 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D2/PathFollow2D" unique_id=752839693 instance=ExtResource("17_krtrm")]
-collision_mask = 5
 
 [node name="Path2D3" type="Path2D" parent="inimigos/andando" unique_id=780052708]
 position = Vector2(631, -104)
@@ -331,7 +292,6 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D3/PathFollow2D" unique_id=30650782 instance=ExtResource("17_krtrm")]
-collision_mask = 5
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Path2D4" type="Path2D" parent="inimigos/andando" unique_id=309806063]
@@ -345,7 +305,6 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1254426945 instance=ExtResource("17_krtrm")]
-collision_mask = 5
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Path2D5" type="Path2D" parent="inimigos/andando" unique_id=382535807]
@@ -373,6 +332,7 @@ loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D6/PathFollow2D" unique_id=2051500735 instance=ExtResource("17_krtrm")]
 direcao_estacionaria = Vector2(1, 0)
+
 [node name="sons" type="Node" parent="." unique_id=505717665]
 
 [node name="porta_abrindo" type="AudioStreamPlayer2D" parent="sons" unique_id=1719522238]
@@ -393,4 +353,56 @@ stream = ExtResource("23_bqy58")
 [node name="alavanca" type="AudioStreamPlayer2D" parent="sons" unique_id=722279221]
 stream = ExtResource("25_0b3j6")
 
-[connection signal="timeout" from="inimigos/andando/Path2D/PathFollow2D/Timer" to="inimigos/andando/Path2D" method="_on_timer_timeout"]
+[node name="interagiveis" type="Node2D" parent="." unique_id=588939985]
+
+[node name="interagível" parent="interagiveis" unique_id=2081020138 instance=ExtResource("3_epxgt")]
+position = Vector2(284, -587)
+
+[node name="interagível2" parent="interagiveis" unique_id=47951355 instance=ExtResource("8_hc7gj")]
+position = Vector2(567, -490)
+
+[node name="interagível3" parent="interagiveis" unique_id=1275376086 instance=ExtResource("10_p8exr")]
+position = Vector2(1155, -708)
+
+[node name="interagível4" parent="interagiveis" unique_id=1114545296 instance=ExtResource("11_qfgno")]
+position = Vector2(924, -453)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1397525784]
+color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1443356699]
+position = Vector2(284, -566)
+energy = 0.5
+texture = ExtResource("23_el17i")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1912396473]
+position = Vector2(570, -471)
+energy = 0.5
+texture = ExtResource("23_el17i")
+
+[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=423580810]
+position = Vector2(644, -761)
+energy = 0.5
+texture = ExtResource("23_el17i")
+
+[node name="PointLight2D6" type="PointLight2D" parent="." unique_id=1550417080]
+position = Vector2(947, -433)
+energy = 0.5
+texture = ExtResource("23_el17i")
+
+[node name="PointLight2D7" type="PointLight2D" parent="." unique_id=757241480]
+position = Vector2(906, 106)
+energy = 0.5
+texture = ExtResource("23_el17i")
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=359147046]
+position = Vector2(1157, -682)
+energy = 0.5
+texture = ExtResource("23_el17i")
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=2107084715]
+position = Vector2(988, -341)
+color = Color(1, 0, 0, 1)
+energy = 0.5
+texture = ExtResource("23_el17i")
+texture_scale = 0.7
