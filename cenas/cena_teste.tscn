@@ -14,7 +14,6 @@
 [ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="AudioStream" uid="uid://chckuygwp1utb" path="res://assets/Assets - Sonorização/music.wav" id="15_el17i"]
-[ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
 [ext_resource type="PackedScene" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
 [ext_resource type="PackedScene" uid="uid://4ln3r4xv2xwx" path="res://cenas/estacionário.tscn" id="17_a0uco"]
@@ -136,18 +135,12 @@ player = NodePath("../../Player")
 camera = NodePath("../../Camera2D")
 
 [node name="porta_temp" parent="." unique_id=116038246 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
-position = Vector2(425, -599)
+position = Vector2(419, -589)
 collision_layer = 8
 filtro = NodePath("../CanvasLayer/ColorRect")
 
 [node name="porta_temp2" parent="." unique_id=2035996300 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
-position = Vector2(558, -9)
-collision_layer = 8
-filtro = NodePath("../CanvasLayer/ColorRect")
-
-[node name="porta_perm" parent="." unique_id=307799865 node_paths=PackedStringArray("filtro") instance=ExtResource("15_y1h0r")]
-position = Vector2(155, -47)
-scale = Vector2(2.5031078, 0.8333342)
+position = Vector2(547, -13)
 collision_layer = 8
 filtro = NodePath("../CanvasLayer/ColorRect")
 
@@ -184,7 +177,7 @@ position = Vector2(1090, -675)
 [node name="andando" type="Node2D" parent="inimigos" unique_id=452969534]
 
 [node name="Path2D" type="Path2D" parent="inimigos/andando" unique_id=528488528]
-position = Vector2(-64, -8)
+position = Vector2(-59, -8)
 curve = SubResource("Curve2D_krtrm")
 script = ExtResource("16_krtrm")
 
@@ -215,7 +208,7 @@ loop = false
 collision_mask = 3
 
 [node name="Path2D2" type="Path2D" parent="inimigos/andando" unique_id=605084401]
-position = Vector2(221, -30)
+position = Vector2(215, -30)
 curve = SubResource("Curve2D_a0uco")
 script = ExtResource("16_krtrm")
 
@@ -256,12 +249,13 @@ collision_mask = 3
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Path2D5" type="Path2D" parent="inimigos/andando" unique_id=382535807]
-position = Vector2(205, 577)
+position = Vector2(194, 577)
 curve = SubResource("Curve2D_45ro2")
 script = ExtResource("16_krtrm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D5" unique_id=1447713397]
-position = Vector2(352, -632)
+position = Vector2(352, -480.87088)
+progress = 151.13
 rotates = false
 loop = false
 

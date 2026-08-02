@@ -13,9 +13,6 @@ extends Area2D
 
 @export var filtro: FiltroInteracao
 
-@export var porta_aberta: Texture2D
-@export var porta_fechada: Texture2D
-
 @export var tempo_fechada := 5.0
 
 
@@ -89,8 +86,6 @@ func abrir(tocar_som := true) -> void:
 	aberta = true
 	esperando = false
 
-	sprite.texture = porta_aberta
-
 	# Desativa somente a colisão que bloqueia o jogador.
 	colisao_fisica.set_deferred(
 		"disabled",
@@ -104,8 +99,6 @@ func fechar() -> void:
 
 	aberta = false
 	esperando = true
-
-	sprite.texture = porta_fechada
 
 	# Ativa a colisão que bloqueia o jogador.
 	colisao_fisica.set_deferred(

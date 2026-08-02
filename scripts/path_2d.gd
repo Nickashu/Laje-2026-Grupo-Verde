@@ -1,32 +1,44 @@
 extends Path2D
 
-@onready var enemy = $PathFollow2D/Enemy
-@onready var enemy2 = $PathFollow2D2/Enemy
-@onready var enemy3 = $PathFollow2D3/Enemy
-@onready var path = $PathFollow2D
-@export var speed:= 100.0
+@export var base_speed:= 100.0
 
-var waiting: bool = false
+var patrulheiros: Array[Dictionary] = []
 
 func _ready() -> void:
-	pass
+	for child in get_children():
+		if child is PathFollow2D:
+			var inimigo_node = child.get_node_or_null("Enemy")
+			if inimigo_node != null:
+				patrulheiros.append({
+					"path": child,
+					"enemy": inimigo_node,
+					"speed": base_speed,
+					"waiting": false
+				})
 
 func _process(delta: float) -> void:
+	for patrulheiro in patrulheiros:
+		_processar_individual(patrulheiro, delta)
+
+func _processar_individual(dados: Dictionary, delta: float) -> void:
+	var enemy = dados["enemy"]
+	var path = dados["path"]
+	
 	if enemy.frozen:
 		return
 		
-	ray()
+	dados["waiting"] = checar_raio(enemy)
 	
-	if waiting:
+	if dados["waiting"]:
 		return
 		
-	path.progress += delta * speed
-	if (path.progress_ratio == 1 or path.progress_ratio == 0 and path.loop == false):
-		speed = -speed
-
-func ray() -> void:
-	var space_state:= get_world_2d().direct_space_state
+	path.progress += delta * dados["speed"]
 	
+	if path.progress_ratio >= 1.0 or (path.progress_ratio <= 0.0 and path.loop == false):
+		dados["speed"] = -dados["speed"]
+
+func checar_raio(enemy: Node2D) -> bool:
+	var space_state:= get_world_2d().direct_space_state
 	var destino: Vector2 = enemy.global_position + (enemy.look_direction * 20)
 	
 	var query:= PhysicsRayQueryParameters2D.create(enemy.global_position, destino, 0b1100)
@@ -39,7 +51,6 @@ func ray() -> void:
 		var porta = result.collider as Porta_temp
 		if porta != null:
 			if porta.colisao_fisica.disabled == false:
-				waiting = true
-				return
-	
-	waiting = false
+				return true
+				
+	return false

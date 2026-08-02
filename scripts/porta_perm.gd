@@ -7,17 +7,17 @@ extends Area2D
 @onready var colisao_fisica: CollisionShape2D = \
 	$StaticBody2D/CollisionShape2D
 
-
-@export var filtro: FiltroInteracao
-
-@export var porta_aberta: Texture2D
-@export var porta_fechada: Texture2D
+@onready var colisao_fisica: CollisionShape2D = \
+	$StaticBody2D/CollisionShape2D2
+	
+@onready var colisao_fisica: CollisionShape2D = \
+	$StaticBody2D/CollisionShape2D2
 
 # Define se a porta começa aberta quando a cena é carregada.
-@export var comeca_aberta := true
+@export var comeca_aberta := false
 
 
-var aberta := true
+var aberta := false
 
 
 func _ready() -> void:
@@ -29,7 +29,6 @@ func _ready() -> void:
 	if collision_layer == 0:
 		collision_layer = 1
 
-	if filtro == null:
 
 		push_error(
 			"O filtro não foi colocado na porta permanente."
@@ -58,13 +57,6 @@ func _input_event(
 
 	print("Clique na porta permanente.")
 
-	if filtro == null:
-		return
-
-	if not filtro.modo_filtro:
-
-		print("O modo filtro está desligado.")
-		return
 
 	aberta = not aberta
 	if aberta:
@@ -79,16 +71,12 @@ func atualizar_porta() -> void:
 
 	if aberta:
 
-		sprite.texture = porta_aberta
-
 		colisao_fisica.set_deferred(
 			"disabled",
 			true
 		)
 
 	else:
-
-		sprite.texture = porta_fechada
 
 		colisao_fisica.set_deferred(
 			"disabled",

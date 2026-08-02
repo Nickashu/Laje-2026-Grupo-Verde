@@ -1,31 +1,116 @@
 [gd_scene format=3 uid="uid://07xtigf77vbp"]
 
 [ext_resource type="Script" uid="uid://e7wn6muhpu4l" path="res://scripts/porta_temp.gd" id="1_e00t1"]
-[ext_resource type="Texture2D" uid="uid://c6qpmcbo02cvp" path="res://assets/porta_aberta.png" id="1_rauc1"]
-[ext_resource type="Texture2D" uid="uid://b16bybede5u5l" path="res://assets/porta_fechada.png" id="3_8punx"]
+[ext_resource type="Texture2D" uid="uid://dd7b60w5tbco1" path="res://assets/porta_metal.PNG" id="4_ifdl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e00t1"]
-size = Vector2(32, 23)
+size = Vector2(35, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8punx"]
-size = Vector2(32, 9)
+size = Vector2(35, 13.5)
+
+[sub_resource type="Animation" id="Animation_ifdl1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_24i3m"]
+resource_name = "abrindo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9, 1.6666666, 3.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_4v6a2"]
+resource_name = "fechando"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_03yhf"]
+_data = {
+&"RESET": SubResource("Animation_ifdl1"),
+&"abrindo": SubResource("Animation_24i3m"),
+&"fechando": SubResource("Animation_4v6a2")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ia1jg"]
+animation = &"abrindo"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pukfp"]
+animation = &"fechando"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5qbti"]
+advance_mode = 2
+advance_expression = "!aberta"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jwujs"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vm1d0"]
+advance_mode = 2
+advance_expression = "aberta"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_btxj8"]
+states/abrindo/node = SubResource("AnimationNodeAnimation_ia1jg")
+states/abrindo/position = Vector2(365, 100)
+states/fechando/node = SubResource("AnimationNodeAnimation_pukfp")
+states/fechando/position = Vector2(704, 100)
+transitions = ["abrindo", "fechando", SubResource("AnimationNodeStateMachineTransition_5qbti"), "Start", "abrindo", SubResource("AnimationNodeStateMachineTransition_jwujs"), "fechando", "abrindo", SubResource("AnimationNodeStateMachineTransition_vm1d0")]
 
 [node name="porta_temp" type="Area2D" unique_id=116038246]
 script = ExtResource("1_e00t1")
-porta_aberta = ExtResource("1_rauc1")
-porta_fechada = ExtResource("3_8punx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1109783712]
-texture = ExtResource("1_rauc1")
+texture = ExtResource("4_ifdl1")
+hframes = 3
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1691416427]
-position = Vector2(0, 0.5)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_e00t1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2088478475]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=230435687]
-position = Vector2(0, 7.5)
+position = Vector2(-0.5, 9.75)
 shape = SubResource("RectangleShape2D_8punx")
 
 [node name="Timer" type="Timer" parent="." unique_id=118857432]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1241930726]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_03yhf")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=497676827]
+root_node = NodePath("../Sprite2D")
+tree_root = SubResource("AnimationNodeStateMachine_btxj8")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../AnimationPlayer")
