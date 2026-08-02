@@ -367,42 +367,44 @@ position = Vector2(1155, -708)
 [node name="interagível4" parent="interagiveis" unique_id=1114545296 instance=ExtResource("11_qfgno")]
 position = Vector2(924, -453)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1397525784]
-color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+[node name="luz" type="Node2D" parent="." unique_id=1132007150]
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1443356699]
+[node name="PointLight2D" type="PointLight2D" parent="luz" unique_id=1443356699]
 position = Vector2(284, -566)
 energy = 0.5
 texture = ExtResource("23_el17i")
 
-[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1912396473]
+[node name="PointLight2D2" type="PointLight2D" parent="luz" unique_id=1912396473]
 position = Vector2(570, -471)
 energy = 0.5
 texture = ExtResource("23_el17i")
 
-[node name="PointLight2D5" type="PointLight2D" parent="." unique_id=423580810]
+[node name="PointLight2D5" type="PointLight2D" parent="luz" unique_id=423580810]
 position = Vector2(644, -761)
 energy = 0.5
 texture = ExtResource("23_el17i")
 
-[node name="PointLight2D6" type="PointLight2D" parent="." unique_id=1550417080]
+[node name="PointLight2D6" type="PointLight2D" parent="luz" unique_id=1550417080]
 position = Vector2(947, -433)
 energy = 0.5
 texture = ExtResource("23_el17i")
 
-[node name="PointLight2D7" type="PointLight2D" parent="." unique_id=757241480]
+[node name="PointLight2D7" type="PointLight2D" parent="luz" unique_id=757241480]
 position = Vector2(906, 106)
 energy = 0.5
 texture = ExtResource("23_el17i")
 
-[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=359147046]
+[node name="PointLight2D4" type="PointLight2D" parent="luz" unique_id=359147046]
 position = Vector2(1157, -682)
 energy = 0.5
 texture = ExtResource("23_el17i")
 
-[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=2107084715]
+[node name="PointLight2D3" type="PointLight2D" parent="luz" unique_id=2107084715]
 position = Vector2(988, -341)
 color = Color(1, 0, 0, 1)
 energy = 0.5
 texture = ExtResource("23_el17i")
 texture_scale = 0.7
+
+[node name="CanvasModulate" type="CanvasModulate" parent="luz" unique_id=1397525784]
+color = Color(0.30692267, 0.3069227, 0.3069227, 1)
