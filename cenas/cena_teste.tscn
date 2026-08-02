@@ -15,13 +15,9 @@
 [ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
-[ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="16_y1h0r"]
-[ext_resource type="PackedScene" uid="uid://bph14lbc4sgf0" path="res://cenas/caminho_do_inimigo.tscn" id="17_krtrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
 size = Vector2(102, 56)
-
-[sub_resource type="Curve2D" id="Curve2D_krtrm"]
 
 [node name="Node2D" type="Node2D" unique_id=887278194]
 
@@ -195,34 +191,3 @@ position = Vector2(576, -417)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1867437156]
 polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 1, 0, 1)
-
-[node name="Enemy" parent="." unique_id=1941488000 instance=ExtResource("16_y1h0r")]
-position = Vector2(671, -205)
-deggre = 30
-
-[node name="Enemy2" parent="." unique_id=65138184 instance=ExtResource("16_y1h0r")]
-position = Vector2(681, -437)
-
-[node name="Enemy3" parent="." unique_id=272330315 instance=ExtResource("16_y1h0r")]
-position = Vector2(605, -683)
-
-[node name="Enemy4" parent="." unique_id=1036268558 instance=ExtResource("16_y1h0r")]
-position = Vector2(1022, -693)
-
-[node name="Enemy5" parent="." unique_id=683864899 instance=ExtResource("16_y1h0r")]
-position = Vector2(932, -637)
-
-[node name="Enemy6" parent="." unique_id=536900454 instance=ExtResource("16_y1h0r")]
-position = Vector2(1090, -675)
-
-[node name="Enemy7" parent="." unique_id=1660078194 instance=ExtResource("16_y1h0r")]
-position = Vector2(425, -278)
-
-[node name="inimigo_em_movimento" parent="." unique_id=639065793 instance=ExtResource("17_krtrm")]
-
-[node name="Path2D" type="Path2D" parent="." unique_id=2054905071]
-curve = SubResource("Curve2D_krtrm")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=654046236]
-
-[node name="Enemy" parent="Path2D/PathFollow2D" unique_id=893834557 instance=ExtResource("16_y1h0r")]

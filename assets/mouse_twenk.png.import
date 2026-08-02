@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crawhbydp0qqf"
-path="res://.godot/imported/spritesInimigo.png-25a2efc53a338e98cd9b57072d7ca1a5.ctex"
+uid="uid://irsjm1palbb1"
+path="res://.godot/imported/mouse_twenk.png-a2965e5d0929539592fb812cc7efbd3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesInimigo.png"
-dest_files=["res://.godot/imported/spritesInimigo.png-25a2efc53a338e98cd9b57072d7ca1a5.ctex"]
+source_file="res://assets/mouse_twenk.png"
+dest_files=["res://.godot/imported/mouse_twenk.png-a2965e5d0929539592fb812cc7efbd3b.ctex"]
 
 [params]
 

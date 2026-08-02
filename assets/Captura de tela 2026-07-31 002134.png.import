@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crawhbydp0qqf"
-path="res://.godot/imported/spritesInimigo.png-25a2efc53a338e98cd9b57072d7ca1a5.ctex"
+uid="uid://jxhr0ehuuvn6"
+path="res://.godot/imported/Captura de tela 2026-07-31 002134.png-189c205fa66c08d211bc28b87f0ec958.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/spritesInimigo.png"
-dest_files=["res://.godot/imported/spritesInimigo.png-25a2efc53a338e98cd9b57072d7ca1a5.ctex"]
+source_file="res://assets/Captura de tela 2026-07-31 002134.png"
+dest_files=["res://.godot/imported/Captura de tela 2026-07-31 002134.png-189c205fa66c08d211bc28b87f0ec958.ctex"]
 
 [params]
 
