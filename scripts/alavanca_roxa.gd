@@ -10,6 +10,7 @@ func _ready():
 	
 func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("interagir"):  # Verifica se a tecla "E" foi pressionada
+		$"../sons/alavanca".play()
 		alavanca_roxa = true
 
 func _on_body_entered(body: Node2D) -> void:
@@ -24,4 +25,3 @@ func _on_body_exited(body: Node2D) -> void:
 		player_in_area = false
 		player = body
 		$Label.visible = false  # Esconde o label de interação
-		Popups.HideLogPopup()

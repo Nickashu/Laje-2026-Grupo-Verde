@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bph14lbc4sgf0"]
 
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="1_qootx"]
-[ext_resource type="PackedScene" uid="uid://b2eb1u6u3cf16" path="res://cenas/inimigo.tscn" id="2_g87fl"]
+[ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="2_g87fl"]
 
 [sub_resource type="Curve2D" id="Curve2D_7tivl"]
 

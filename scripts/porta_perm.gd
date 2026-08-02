@@ -1,3 +1,4 @@
+class_name Porta_perm
 extends Area2D
 
 
@@ -66,6 +67,10 @@ func _input_event(
 		return
 
 	aberta = not aberta
+	if aberta:
+		$"../sons/porta_abrindo".play()
+	else:
+		$"../sons/porta_fechando".play()
 
 	atualizar_porta()
 

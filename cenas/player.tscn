@@ -240,7 +240,8 @@ graph_offset = Vector2(-126, 22)
 
 [node name="Player" type="CharacterBody2D" unique_id=482596540]
 z_index = 1
-collision_layer = 2
+collision_layer = 6
+collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_4flbx")
 
