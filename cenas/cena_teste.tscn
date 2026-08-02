@@ -15,9 +15,35 @@
 [ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
+[ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
+[ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="17_krtrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
 size = Vector2(102, 56)
+
+[sub_resource type="Curve2D" id="Curve2D_krtrm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 206, -660, 0, 0, 0, 0, 204, -65)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_a0uco"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 204, -653, 0, 0, 0, 0, 204, -314)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_y1h0r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 297, -464, 0, 0, 0, 0, 597, -466)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_nxbln"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 297, -464, 0, 0, 0, 0, 597, -466)
+}
+point_count = 2
 
 [node name="Node2D" type="Node2D" unique_id=887278194]
 
@@ -86,6 +112,7 @@ position = Vector2(1155, -708)
 position = Vector2(924, -453)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
+position = Vector2(159, -28)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
@@ -191,3 +218,100 @@ position = Vector2(576, -417)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1867437156]
 polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 1, 0, 1)
+
+[node name="inimigos" type="Node2D" parent="." unique_id=2032389063]
+
+[node name="parado" type="Node2D" parent="inimigos" unique_id=1688292293]
+
+[node name="Enemy" parent="inimigos/parado" unique_id=1941488000 instance=ExtResource("17_krtrm")]
+position = Vector2(606, -684)
+comportamento = 1
+
+[node name="Enemy2" parent="inimigos/parado" unique_id=1591386832 instance=ExtResource("17_krtrm")]
+position = Vector2(682, -440)
+comportamento = 1
+
+[node name="Enemy3" parent="inimigos/parado" unique_id=1697550435 instance=ExtResource("17_krtrm")]
+position = Vector2(932, -638)
+comportamento = 1
+direcao_estacionaria = Vector2(1, 0)
+
+[node name="Enemy4" parent="inimigos/parado" unique_id=2121887646 instance=ExtResource("17_krtrm")]
+position = Vector2(1022, -695)
+comportamento = 1
+direcao_estacionaria = Vector2(-1, 0)
+
+[node name="Enemy5" parent="inimigos/parado" unique_id=1819054214 instance=ExtResource("17_krtrm")]
+position = Vector2(1088, -676)
+comportamento = 1
+
+[node name="Enemy6" parent="inimigos/parado" unique_id=741869721 instance=ExtResource("17_krtrm")]
+position = Vector2(672, -206)
+comportamento = 1
+
+[node name="Enemy7" parent="inimigos/parado" unique_id=2132043805 instance=ExtResource("17_krtrm")]
+position = Vector2(426, -277)
+comportamento = 1
+direcao_estacionaria = Vector2(0, -1)
+
+[node name="andando" type="Node2D" parent="inimigos" unique_id=452969534]
+
+[node name="Path2D" type="Path2D" parent="inimigos/andando" unique_id=528488528]
+position = Vector2(-46, -6)
+curve = SubResource("Curve2D_krtrm")
+script = ExtResource("16_krtrm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D" unique_id=243268486]
+position = Vector2(206, -660)
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=853667322 instance=ExtResource("17_krtrm")]
+
+[node name="Timer" type="Timer" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=1193581365]
+
+[node name="RayCast2D" type="RayCast2D" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=374307234]
+
+[node name="Path2D2" type="Path2D" parent="inimigos/andando" unique_id=605084401]
+position = Vector2(221, -30)
+curve = SubResource("Curve2D_a0uco")
+script = ExtResource("16_krtrm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D2" unique_id=1939265438]
+position = Vector2(204, -653)
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D2/PathFollow2D" unique_id=752839693 instance=ExtResource("17_krtrm")]
+
+[node name="Timer" type="Timer" parent="inimigos/andando/Path2D2/PathFollow2D" unique_id=1199881012]
+
+[node name="Path2D3" type="Path2D" parent="inimigos/andando" unique_id=780052708]
+position = Vector2(631, -104)
+curve = SubResource("Curve2D_y1h0r")
+script = ExtResource("16_krtrm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D3" unique_id=641304721]
+position = Vector2(297, -464)
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D3/PathFollow2D" unique_id=30650782 instance=ExtResource("17_krtrm")]
+
+[node name="Timer" type="Timer" parent="inimigos/andando/Path2D3/PathFollow2D" unique_id=1018129864]
+
+[node name="Path2D4" type="Path2D" parent="inimigos/andando" unique_id=309806063]
+position = Vector2(631, -26)
+curve = SubResource("Curve2D_nxbln")
+script = ExtResource("16_krtrm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D4" unique_id=256600506]
+position = Vector2(297, -464)
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1254426945 instance=ExtResource("17_krtrm")]
+
+[node name="Timer" type="Timer" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1761145002]
+
+[connection signal="timeout" from="inimigos/andando/Path2D/PathFollow2D/Timer" to="inimigos/andando/Path2D" method="_on_timer_timeout"]

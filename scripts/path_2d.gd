@@ -1,7 +1,9 @@
 extends Path2D
 @onready var enemy = $PathFollow2D/Enemy
 @onready var path = $PathFollow2D
-@export var speed:= 1.0
+@onready var timer:= $PathFollow2D/Timer
+@export var speed:= 100.0
+var waiting: bool = false
 
 
 var indo:= true
@@ -12,9 +14,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !enemy.frozen:
-		path.progress_ratio += delta * speed
-		if (path.progress_ratio == 1 or path.progress_ratio == 0 and path.loop == false):
-			speed = -speed
-			#enemy.area_of_sight.rotate(PI/2)
-			
+	if enemy.frozen or waiting:
+		return
+	path.progress += delta * speed
+	if (path.progress_ratio == 1 or path.progress_ratio == 0 and path.loop == false):
+		speed = -speed
+		
+		
+
+
+func _on_timer_timeout() -> void:
+	waiting = false

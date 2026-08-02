@@ -195,7 +195,7 @@ func _ray_to(to : Vector2) -> Vector2:
 	var space = get_world_2d().direct_space_state
 	
 	var result = space.intersect_ray(PhysicsRayQueryParameters2D.create(
-		global_position, to, obstacle_mask, [self]
+		global_position, to, obstacle_mask
 	))
 	
 	if result:
@@ -248,18 +248,28 @@ func _remove_from_reach_area_list(agent : Area2D) -> void:
 	if agent is AreaOfSightAgent2D and agent != parent_agent:
 		if agent in _agents_in_reach_area:
 			_agents_in_reach_area.erase(agent)
+			
+			var node = agent.parent_node
+			if node and node in _nodes_in_area_of_sight:
+				_nodes_in_area_of_sight.erase(node)
+				node_exited_area.emit(node)
 
 
 ## Returns [code]true[/code] if the [param agent] is seen by the [AreaOfSight2D] at the moment.
 ## Uses [member AreaOfSightAgent2D.target_points] to calculate.
 func sees_agent(agent : AreaOfSightAgent2D) -> bool:
-	
 	var agent_pos : Vector2 = to_local(agent.global_position)
+	
+	if agent_pos.length() < 1.0: return false
+	
+	var center_angle = agent_pos.angle()
+	if abs(center_angle) > _semiangle + 0.15:
+		return false
+
 	for point in agent.target_points:
 		var point_to_check : Vector2 = agent_pos + point
 		if Geometry2D.is_point_in_polygon(point_to_check, _polygon_points):
 			return true
-	
 	return false
 
 
