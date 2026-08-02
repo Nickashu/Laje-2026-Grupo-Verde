@@ -13,6 +13,8 @@ radius = 16.124516
 size = Vector2(90.90909, 37.272724)
 
 [node name="alavanca_preta" type="Area2D" unique_id=2081020138]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_xmgfy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502199384]

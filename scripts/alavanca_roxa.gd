@@ -24,4 +24,3 @@ func _on_body_exited(body: Node2D) -> void:
 		player_in_area = false
 		player = body
 		$Label.visible = false  # Esconde o label de interação
-		Popups.HideLogPopup()

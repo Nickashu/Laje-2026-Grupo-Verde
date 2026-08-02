@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
+[ext_resource type="PackedScene" uid="uid://7aiwrnnmy5dj" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
 size = Vector2(102, 56)
@@ -191,3 +192,6 @@ position = Vector2(576, -417)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1867437156]
 polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 1, 0, 1)
+
+[node name="Area fim" parent="." unique_id=1831540893 instance=ExtResource("16_y1h0r")]
+position = Vector2(930, -341)

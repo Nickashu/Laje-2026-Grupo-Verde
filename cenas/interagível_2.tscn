@@ -7,6 +7,8 @@
 radius = 16.124516
 
 [node name="interagível2" type="Area2D" unique_id=2081020138]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_cp0wd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502199384]
