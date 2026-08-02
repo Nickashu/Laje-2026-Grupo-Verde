@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
 [ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
-[ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
+[ext_resource type="PackedScene" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
 [ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
@@ -17,13 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
-[ext_resource type="PackedScene" uid="uid://7aiwrnnmy5dj" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
+[ext_resource type="PackedScene" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
 [ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="17_krtrm"]
 [ext_resource type="AudioStream" uid="uid://cdddsikfh6twm" path="res://assets/Assets - Sonorização/door1.wav" id="20_3rtvq"]
 [ext_resource type="AudioStream" uid="uid://cvea152irb2p4" path="res://assets/Assets - Sonorização/door2_fechando.wav" id="21_bqy58"]
 [ext_resource type="AudioStream" uid="uid://bwbosegn7mfk" path="res://assets/Assets - Sonorização/log.wav" id="22_el17i"]
 [ext_resource type="AudioStream" uid="uid://yn6dof8caj45" path="res://assets/Assets - Sonorização/step.wav" id="23_bqy58"]
-[ext_resource type="AudioStream" uid="uid://0cdrka56amo4" path="res://assets/Assets - Sonorização/visto.wav" id="24_cxuch"]
 [ext_resource type="AudioStream" uid="uid://dpvu2rik0lgso" path="res://assets/Assets - Sonorização/botao_alavanca.wav" id="25_0b3j6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
@@ -256,32 +255,39 @@ position = Vector2(930, -341)
 
 [node name="Enemy" parent="inimigos/parado" unique_id=1941488000 instance=ExtResource("17_krtrm")]
 position = Vector2(606, -684)
+collision_mask = 5
 comportamento = 1
 
 [node name="Enemy2" parent="inimigos/parado" unique_id=1591386832 instance=ExtResource("17_krtrm")]
 position = Vector2(682, -440)
+collision_mask = 5
 comportamento = 1
 
 [node name="Enemy3" parent="inimigos/parado" unique_id=1697550435 instance=ExtResource("17_krtrm")]
 position = Vector2(932, -638)
+collision_mask = 5
 comportamento = 1
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Enemy4" parent="inimigos/parado" unique_id=2121887646 instance=ExtResource("17_krtrm")]
 position = Vector2(1022, -695)
+collision_mask = 5
 comportamento = 1
 direcao_estacionaria = Vector2(-1, 0)
 
 [node name="Enemy5" parent="inimigos/parado" unique_id=1819054214 instance=ExtResource("17_krtrm")]
 position = Vector2(1088, -676)
+collision_mask = 5
 comportamento = 1
 
 [node name="Enemy6" parent="inimigos/parado" unique_id=741869721 instance=ExtResource("17_krtrm")]
 position = Vector2(672, -206)
+collision_mask = 5
 comportamento = 1
 
 [node name="Enemy7" parent="inimigos/parado" unique_id=2132043805 instance=ExtResource("17_krtrm")]
 position = Vector2(426, -277)
+collision_mask = 5
 comportamento = 1
 direcao_estacionaria = Vector2(0, -1)
 
@@ -298,6 +304,7 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=853667322 instance=ExtResource("17_krtrm")]
+collision_mask = 5
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=1193581365]
 
@@ -312,6 +319,7 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D2/PathFollow2D" unique_id=752839693 instance=ExtResource("17_krtrm")]
+collision_mask = 5
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D2/PathFollow2D" unique_id=1199881012]
 
@@ -326,6 +334,7 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D3/PathFollow2D" unique_id=30650782 instance=ExtResource("17_krtrm")]
+collision_mask = 5
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D3/PathFollow2D" unique_id=1018129864]
@@ -341,6 +350,7 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1254426945 instance=ExtResource("17_krtrm")]
+collision_mask = 5
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1761145002]
@@ -361,9 +371,6 @@ stream = ExtResource("22_el17i")
 
 [node name="andar" type="AudioStreamPlayer2D" parent="sons" unique_id=1674822848]
 stream = ExtResource("23_bqy58")
-
-[node name="visto" type="AudioStreamPlayer2D" parent="sons" unique_id=1106294390]
-stream = ExtResource("24_cxuch")
 
 [node name="alavanca" type="AudioStreamPlayer2D" parent="sons" unique_id=722279221]
 stream = ExtResource("25_0b3j6")

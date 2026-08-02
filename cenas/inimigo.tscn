@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crawhbydp0qqf" path="res://assets/spritesInimigo.png" id="2_iifgy"]
 [ext_resource type="Script" uid="uid://bx6ysw1v4wgpd" path="res://addons/area_of_sight_2d/area_of_sight_2d.gd" id="3_ghijl"]
 [ext_resource type="Script" uid="uid://cmhq7eso78o1n" path="res://scripts/vision.gd" id="3_iifgy"]
+[ext_resource type="AudioStream" uid="uid://0cdrka56amo4" path="res://assets/Assets - Sonorização/visto.wav" id="4_n5rp5"]
 
 [sub_resource type="GDScript" id="GDScript_g45jm"]
 script/source = "@tool
@@ -317,10 +318,11 @@ libraries/ = SubResource("AnimationLibrary_pwjut")
 tree_root = SubResource("AnimationNodeStateMachine_iifgy")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
-parameters/idle/blend_position = Vector2(0, 0)
-parameters/walking/blend_position = Vector2(0, 0)
+parameters/idle/blend_position = Vector2(0, 1)
+parameters/walking/blend_position = Vector2(0, 1)
 
 [node name="vision" type="Node2D" parent="." unique_id=1781992955]
+rotation = 1.5707964
 script = ExtResource("3_iifgy")
 
 [node name="AreaOfSight2D" type="Node2D" parent="vision" unique_id=583016632]
@@ -333,5 +335,8 @@ tracking_agents_mask = 1
 area_color = Color(0.8156863, 0, 0, 0.74509805)
 edge_color = Color(0, 0, 0, 1)
 edge_width = 1.0
+
+[node name="visto" type="AudioStreamPlayer2D" parent="." unique_id=1185163044]
+stream = ExtResource("4_n5rp5")
 
 [connection signal="node_entered_area" from="vision/AreaOfSight2D" to="vision" method="_on_area_of_sight_2d_node_entered_area"]
