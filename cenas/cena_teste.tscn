@@ -271,6 +271,8 @@ loop = false
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=1193581365]
 
 [node name="RayCast2D" type="RayCast2D" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=374307234]
+position = Vector2(0, 12)
+target_position = Vector2(0, 4)
 
 [node name="Path2D2" type="Path2D" parent="inimigos/andando" unique_id=605084401]
 position = Vector2(221, -30)
@@ -297,6 +299,7 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D3/PathFollow2D" unique_id=30650782 instance=ExtResource("17_krtrm")]
+direcao_estacionaria = Vector2(1, 0)
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D3/PathFollow2D" unique_id=1018129864]
 
@@ -311,6 +314,7 @@ rotates = false
 loop = false
 
 [node name="Enemy" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1254426945 instance=ExtResource("17_krtrm")]
+direcao_estacionaria = Vector2(1, 0)
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1761145002]
 

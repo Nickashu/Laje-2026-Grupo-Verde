@@ -296,8 +296,8 @@ states/walking/position = Vector2(661, 96)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_7m0xs"), "idle", "walking", SubResource("AnimationNodeStateMachineTransition_hcxbj"), "walking", "idle", SubResource("AnimationNodeStateMachineTransition_rt7ci")]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1941488000]
-collision_layer = 6
-collision_mask = 4
+collision_layer = 2
+collision_mask = 3
 motion_mode = 1
 script = SubResource("GDScript_g45jm")
 
