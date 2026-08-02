@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bph14lbc4sgf0"]
+
+[ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="1_qootx"]
+[ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="2_g87fl"]
+
+[sub_resource type="Curve2D" id="Curve2D_7tivl"]
+
+[node name="Path2D" type="Path2D" unique_id=639065793]
+curve = SubResource("Curve2D_7tivl")
+script = ExtResource("1_qootx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=580337171]
+
+[node name="Inimigo" parent="PathFollow2D" unique_id=1941488000 instance=ExtResource("2_g87fl")]

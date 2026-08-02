@@ -6,9 +6,5 @@ extends Node2D
 
 func _on_area_of_sight_2d_node_entered_area(node: Node2D) -> void:
 	if node.name == "Player":
-		print("Imposter spotted")
-		
-		area_of_sight.reset_detection()
-		
 		if node.has_method("respawn"):
 			node.respawn()
