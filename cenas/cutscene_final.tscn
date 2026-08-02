@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c7vinndrj4bym" path="res://assets/cutscene provisória/cutscene2.png" id="3_yyaw6"]
 [ext_resource type="Texture2D" uid="uid://m6yfr03vhodd" path="res://assets/cutscene provisória/cutscene3.png" id="4_g6dk8"]
 [ext_resource type="Texture2D" uid="uid://c7wx5vmxnybh7" path="res://assets/cutscene provisória/cutscene4.png" id="5_gwtry"]
+[ext_resource type="PackedScene" uid="uid://coif6fgu27xtc" path="res://cenas/transição.tscn" id="6_w8ddy"]
 
 [sub_resource type="Animation" id="Animation_a8hyk"]
 length = 0.001
@@ -221,3 +222,5 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(950, 439.99997)
 scale = Vector2(0.645, 0.645)
 texture = ExtResource("5_gwtry")
+
+[node name="Transição" parent="." unique_id=1853033744 instance=ExtResource("6_w8ddy")]

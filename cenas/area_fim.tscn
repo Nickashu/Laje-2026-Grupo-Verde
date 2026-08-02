@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://7aiwrnnmy5dj"]
 
-[ext_resource type="Script" uid="uid://dwrxqteno4um7" path="res://scripts/area_fim.gd" id="1_8sgvo"]
+[ext_resource type="Script" path="res://scripts/area_fim.gd" id="1_8sgvo"]
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_gwqbd"]
+[ext_resource type="PackedScene" uid="uid://coif6fgu27xtc" path="res://cenas/transição.tscn" id="3_gwqbd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqwjx"]
 radius = 16.124516
@@ -18,6 +19,8 @@ shape = SubResource("CircleShape2D_wqwjx")
 modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.215, 0.215)
 texture = ExtResource("2_gwqbd")
+
+[node name="Transição" parent="." unique_id=1853033744 instance=ExtResource("3_gwqbd")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
