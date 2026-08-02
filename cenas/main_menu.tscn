@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://th13sjrgss2l"]
 
 [ext_resource type="Script" uid="uid://bs7lmebj7omi0" path="res://scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="AudioStream" uid="uid://bq0fi23wwbi4j" path="res://assets/Assets - Sonorização/select2.wav" id="2_dplvp"]
 
 [node name="MainMenu" type="Control" unique_id=288828817]
 layout_mode = 3
@@ -26,6 +27,9 @@ offset_top = 362.0
 offset_right = 772.0
 offset_bottom = 465.0
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1641024993]
+stream = ExtResource("2_dplvp")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
