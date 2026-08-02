@@ -20,11 +20,18 @@ enum Comportamento { PATRULHA, ESTACIONARIO }
 @onready var animation_tree:= $AnimationTree
 @onready var last_position: Vector2 = global_position
 @onready var vision:= $vision
-
 var idle: bool = true
 var look_direction: Vector2 = Vector2.DOWN 
 
+func _ready() -> void:
+	if not Engine.is_editor_hint():
+		if direcao_estacionaria != Vector2.ZERO:
+			look_direction = direcao_estacionaria.normalized()
+
 func _physics_process(delta: float) -> void:
+	
+	if Engine.is_editor_hint():
+		return
 	if frozen:
 		animation_tree.active = false
 		return
@@ -59,13 +66,12 @@ func _processar_estacionario() -> void:
 		
 func atualizar_visao_no_editor() -> void:
 	if Engine.is_editor_hint() and is_node_ready():
-		if comportamento == Comportamento.ESTACIONARIO:
-			var vision = get_node_or_null(\"vision\")
-			var anim_tree = get_node_or_null(\"AnimationTree\")
-			
-			if vision != null and anim_tree != null:
-				vision.rotation = direcao_estacionaria.angle()
-				anim_tree.set(\"parameters/idle/blend_position\", direcao_estacionaria)
+		var vision = get_node_or_null(\"vision\")
+		var anim_tree = get_node_or_null(\"AnimationTree\")
+		
+		if vision != null and anim_tree != null:
+			vision.rotation = direcao_estacionaria.angle()
+			anim_tree.set(\"parameters/idle/blend_position\", direcao_estacionaria)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_186t8"]
@@ -295,7 +301,7 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1941488000]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 5
 motion_mode = 1
 script = SubResource("GDScript_g45jm")
 

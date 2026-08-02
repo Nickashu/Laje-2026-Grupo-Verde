@@ -16,10 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
+[ext_resource type="PackedScene" uid="uid://oa3wbsfgfi38" path="res://cenas/estacionário.tscn" id="17_a0uco"]
 [ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="17_krtrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
-size = Vector2(102, 56)
+size = Vector2(37, 15)
 
 [sub_resource type="Curve2D" id="Curve2D_krtrm"]
 _data = {
@@ -35,13 +36,25 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_y1h0r"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 297, -464, 0, 0, 0, 0, 597, -466)
+"points": PackedVector2Array(0, 0, 0, 0, 297, -466, 0, 0, 0, 0, 597, -466)
 }
 point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_nxbln"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 297, -464, 0, 0, 0, 0, 597, -466)
+"points": PackedVector2Array(0, 0, 0, 0, 306, -466, 0, 0, 0, 0, 590, -466)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_45ro2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 352, -632, 0, 0, 0, 0, 352, -292)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_nyd5j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 388, -629, 0, 0, 0, 0, 388, -291)
 }
 point_count = 2
 
@@ -112,7 +125,7 @@ position = Vector2(1155, -708)
 position = Vector2(924, -453)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
-position = Vector2(159, -28)
+position = Vector2(466, -362)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
@@ -223,36 +236,28 @@ polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 
 
 [node name="parado" type="Node2D" parent="inimigos" unique_id=1688292293]
 
-[node name="Enemy" parent="inimigos/parado" unique_id=1941488000 instance=ExtResource("17_krtrm")]
-position = Vector2(606, -684)
-comportamento = 1
+[node name="estacionário" parent="inimigos/parado" unique_id=857032960 instance=ExtResource("17_a0uco")]
+position = Vector2(424, -278)
 
-[node name="Enemy2" parent="inimigos/parado" unique_id=1591386832 instance=ExtResource("17_krtrm")]
-position = Vector2(682, -440)
-comportamento = 1
+[node name="estacionário2" parent="inimigos/parado" unique_id=1514483717 instance=ExtResource("17_a0uco")]
+position = Vector2(681, -438)
 
-[node name="Enemy3" parent="inimigos/parado" unique_id=1697550435 instance=ExtResource("17_krtrm")]
+[node name="estacionário3" parent="inimigos/parado" unique_id=423757947 instance=ExtResource("17_a0uco")]
+position = Vector2(671, -202)
+
+[node name="estacionário4" parent="inimigos/parado" unique_id=2146701024 instance=ExtResource("17_a0uco")]
+position = Vector2(605, -684)
+
+[node name="estacionário5" parent="inimigos/parado" unique_id=914286875 instance=ExtResource("17_a0uco")]
 position = Vector2(932, -638)
-comportamento = 1
-direcao_estacionaria = Vector2(1, 0)
+direcoes_giro = Array[Vector2]([Vector2(1, 0), Vector2(-1, 0)])
 
-[node name="Enemy4" parent="inimigos/parado" unique_id=2121887646 instance=ExtResource("17_krtrm")]
-position = Vector2(1022, -695)
-comportamento = 1
-direcao_estacionaria = Vector2(-1, 0)
+[node name="estacionário6" parent="inimigos/parado" unique_id=1177033588 instance=ExtResource("17_a0uco")]
+position = Vector2(1023, -694)
+direcoes_giro = Array[Vector2]([Vector2(1, 0), Vector2(-1, 0)])
 
-[node name="Enemy5" parent="inimigos/parado" unique_id=1819054214 instance=ExtResource("17_krtrm")]
-position = Vector2(1088, -676)
-comportamento = 1
-
-[node name="Enemy6" parent="inimigos/parado" unique_id=741869721 instance=ExtResource("17_krtrm")]
-position = Vector2(672, -206)
-comportamento = 1
-
-[node name="Enemy7" parent="inimigos/parado" unique_id=2132043805 instance=ExtResource("17_krtrm")]
-position = Vector2(426, -277)
-comportamento = 1
-direcao_estacionaria = Vector2(0, -1)
+[node name="estacionário7" parent="inimigos/parado" unique_id=843330318 instance=ExtResource("17_a0uco")]
+position = Vector2(1090, -675)
 
 [node name="andando" type="Node2D" parent="inimigos" unique_id=452969534]
 
@@ -290,7 +295,7 @@ curve = SubResource("Curve2D_y1h0r")
 script = ExtResource("16_krtrm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D3" unique_id=641304721]
-position = Vector2(297, -464)
+position = Vector2(297, -466)
 rotates = false
 loop = false
 
@@ -305,7 +310,7 @@ curve = SubResource("Curve2D_nxbln")
 script = ExtResource("16_krtrm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D4" unique_id=256600506]
-position = Vector2(297, -464)
+position = Vector2(306, -466)
 rotates = false
 loop = false
 
@@ -313,5 +318,35 @@ loop = false
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1761145002]
+
+[node name="Path2D5" type="Path2D" parent="inimigos/andando" unique_id=382535807]
+position = Vector2(205, 577)
+curve = SubResource("Curve2D_45ro2")
+script = ExtResource("16_krtrm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D5" unique_id=1447713397]
+position = Vector2(352, -632)
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D5/PathFollow2D" unique_id=48963695 instance=ExtResource("17_krtrm")]
+direcao_estacionaria = Vector2(1, 0)
+
+[node name="Timer" type="Timer" parent="inimigos/andando/Path2D5/PathFollow2D" unique_id=1890769715]
+
+[node name="Path2D6" type="Path2D" parent="inimigos/andando" unique_id=1635163448]
+position = Vector2(320, 574)
+curve = SubResource("Curve2D_nyd5j")
+script = ExtResource("16_krtrm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="inimigos/andando/Path2D6" unique_id=1692344632]
+position = Vector2(388, -629)
+rotates = false
+loop = false
+
+[node name="Enemy" parent="inimigos/andando/Path2D6/PathFollow2D" unique_id=2051500735 instance=ExtResource("17_krtrm")]
+direcao_estacionaria = Vector2(1, 0)
+
+[node name="Timer" type="Timer" parent="inimigos/andando/Path2D6/PathFollow2D" unique_id=517704538]
 
 [connection signal="timeout" from="inimigos/andando/Path2D/PathFollow2D/Timer" to="inimigos/andando/Path2D" method="_on_timer_timeout"]
