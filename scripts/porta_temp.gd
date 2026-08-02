@@ -82,7 +82,7 @@ func _input_event(
 		fechar()
 
 
-func abrir() -> void:
+func abrir(tocar_som := true) -> void:
 
 	aberta = true
 	esperando = false
@@ -94,6 +94,8 @@ func abrir() -> void:
 		"disabled",
 		true
 	)
+	if tocar_som:
+		$"../sons/porta_abrindo".play()
 
 
 func fechar() -> void:
@@ -108,6 +110,7 @@ func fechar() -> void:
 		"disabled",
 		false
 	)
+	$"../sons/porta_fechando".play()
 
 	timer.start()
 

@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://bb7321ojalvca"]
+[gd_scene format=4 uid="uid://bb7321ojalvca"]
 
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
 [ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
-[ext_resource type="PackedScene" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
+[ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
 [ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
@@ -17,8 +17,14 @@
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
-[ext_resource type="PackedScene" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
+[ext_resource type="PackedScene" uid="uid://7aiwrnnmy5dj" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
 [ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="17_krtrm"]
+[ext_resource type="AudioStream" uid="uid://cdddsikfh6twm" path="res://assets/Assets - Sonorização/door1.wav" id="20_3rtvq"]
+[ext_resource type="AudioStream" uid="uid://cvea152irb2p4" path="res://assets/Assets - Sonorização/door2_fechando.wav" id="21_bqy58"]
+[ext_resource type="AudioStream" uid="uid://bwbosegn7mfk" path="res://assets/Assets - Sonorização/log.wav" id="22_el17i"]
+[ext_resource type="AudioStream" uid="uid://yn6dof8caj45" path="res://assets/Assets - Sonorização/step.wav" id="23_bqy58"]
+[ext_resource type="AudioStream" uid="uid://0cdrka56amo4" path="res://assets/Assets - Sonorização/visto.wav" id="24_cxuch"]
+[ext_resource type="AudioStream" uid="uid://dpvu2rik0lgso" path="res://assets/Assets - Sonorização/botao_alavanca.wav" id="25_0b3j6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
 size = Vector2(102, 56)
@@ -46,6 +52,14 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 297, -464, 0, 0, 0, 0, 597, -466)
 }
 point_count = 2
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_cxuch"]
+data = PackedByteArray("cW9hZgAAEXUBAKxEEXUHGAAAAAAAAAAAAAAAAOAAQABxZ9U01ZYqmmqaaoH331l3eJpqyyyptNN05Y0AqnKmmlvn31311m+6Zz6ptfffNXd4mmrKiqm5U2331gE8u6csX/fffXfObz5fLvK15d9891m+s8+c4P3laNNPMJqyyyxf95ZZ98Tvulu++7X31nznXb77pyyg/eVpY1cHKnLPrF/33Tn3zG8sWy7ytfffeOV0mmmmmmC003TTThKaaacqW/WffffJ77xXPrKxd5Zd41ku8su+4H33XeOfS77xz6pX9Vd5d81LLGaaabTBDlljZJppppykNWNlY1YnPrKnKldn31V3xE+sTy772fefXfVJrvPnPrV95Vn1Tksu8u+8WuffffWESyxbGru01Z9VYUG+s+su9X33WfWVb6yyyxlR995Y1cTLLl8c+tln1V3zUbxpyyylfeNJ99ZrvvvruUHn1n31ke++Vpz62VNNNNJXvrPmrHZ941VjTW+++qcoUffeNWNS775PLvL995d080W++u8u9n33SfXfb767y7lRZU59U4rqnFsssrTVlllzU776yyytNWVN99dPrvvvuFFn1V3jiu+qVyyptWWWWWJXLLvHKm1ZZUl3hksu++srUWMOVOWJyyxLLKn9959d5Euc+u8u9n33SXeBby76yytF95ZZ8VLvrEu8qf1nl3lyR7767y7/WfdJd81vvrLvu0X3333jm+suTy6tefWfffRLrLLvvvZZ9Un3wOs+c++fVWWWVONJyyxPmqR995d45k++u8rX33n1TJ7767y/feVU04mnLLGDU1TVjTUaaacqVtWWWWESyxpWmDZZ9U4QnFssaoFlTTnyT5z6772fefdN8rvrPrL95Un31m++su6fTffefAb7675OB5Z9Z8nvnFsabVn1TVxKR7y761fWffdMnvrvLvZ990V3yu+++s7nSWWfNb767ypD5Z998RvvrFcpFlllThCcWoq7gWWWVOBSnLLGnZU01VjScsaaabVlTeXfT5z67p1J9994VvHLvk6d3Tn3weacT5zgffeWWS5WnLLGw001Y0Wsu+u8tln3SXfSy76yy/VJ95YVvLrLGUP1V3TgO+auT6tfeWfWJ75LLvrVZZ999Fu+qKsdllTTSWb75q77ufdU00UCmnLKjU33n1gO+su+WgMOVNNJyxpLvrZ95ZZYjE+c+srX1V3lSb76777ufeVJ9VvvvrKnZ033lhG++su4QffeWWA776xGm195ZZYnvk+au5X33llkRz5pyy2WfeVJZLLGnKnZU0VljW8csu6PTVWWfAy775pKDd0598HrLEu+rX333lkuT6xpy2ffefVFLvvrKj95ZT3l2+u+u6f3RWfWNJxpyyhBU1ZZ8DLHLEu4FTTVliKcSxpytWWfffJLvrGmm1U01TxWu+uu6f3nROfMRyy76g1JZ9980mnvHEpDVn1VxMu+Py7tfefffR4/rvnP99599UUscsu8dllTOfEZ7766k/c5998RrvnLuTH3n33yeu+cRytMOfVXEyw7vrL991d5dEcscssrlVjDPfby676g+Wc958DrvrvqTUVllTScacaaOtfefVXJ75w7vr9595Zcnj+u+atn3n1lOb5y76p1XdU94VvrvnOj90TVjREsu+spOdNWWfS6764/rZ5Z999LvkcsabVllTREP6767y3dNXc45LvnPmR5Zz33zUcu+u4NOWffeI75z5w7Z95ZZ9Lrvjsu7n3ln1m+P4q76/feWfM1vrvruj995z1hG+u+sbX3OWffA76xy7k19959YjLHLj+rX33l3kcuOy77lVNWWWQ7vrLvHZ995ThEcscu6bn3OWWAxy76xsU90598DLvrvj4Fln33ku+uP76tWffeNRxGnLGC00wQQDMcacaYNllTNWASxyxykNUt998jnvnvrTDVllnycu+sNptWVNNNRoo3LGm1ZU00Ujcu+sYNlTTVOAxopyxkWVM000nHLvrKBTlTTTSKcacsK+ffdXWa664vnO1Z95d9viMu+Ydn3n1hMSxyxpptNNU4wjLHLGmVUyln1kuMu+e9KfefWfS5y74nL9959ZZvnCuu8f33lnxGK75y6g/feWcsnrvnvujZ9y3lkue+scpFKVNXeb576xwq1Z999VrHviu+tlTV3jksJ767x2WVNNAhvmnvqDZZZy1gMccu+pX3LeNXEIpxyxslU59U4nHLqiKbVllTjSKeL6xgVNWNWFInLrLvG001YyQCccscoFllKWWAxpxyxtMgQQVYnGnGiCLTBBBBScacHy6/eWWXNZ4XHvmD995d8RWuuucpFln3HXFIx757ufcZZY1rrnLqjRn1V31iKCccGx2WWWWE66wXGmjZZUVYDBcuqKaZVljVGAAAAppplNMU04QCiCmiSAn31zwAAAAA")
+format = 3
+tags = {
+"title": "select2",
+"tracknumber": "3"
+}
 
 [node name="Node2D" type="Node2D" unique_id=887278194]
 
@@ -330,5 +344,28 @@ loop = false
 direcao_estacionaria = Vector2(1, 0)
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D4/PathFollow2D" unique_id=1761145002]
+
+[node name="sons" type="Node" parent="." unique_id=505717665]
+
+[node name="porta_abrindo" type="AudioStreamPlayer2D" parent="sons" unique_id=1719522238]
+stream = ExtResource("20_3rtvq")
+
+[node name="porta_fechando" type="AudioStreamPlayer2D" parent="sons" unique_id=1387504420]
+stream = ExtResource("21_bqy58")
+
+[node name="troca_de_modo" type="AudioStreamPlayer2D" parent="sons" unique_id=960554828]
+stream = SubResource("AudioStreamWAV_cxuch")
+
+[node name="logs" type="AudioStreamPlayer2D" parent="sons" unique_id=1696128937]
+stream = ExtResource("22_el17i")
+
+[node name="andar" type="AudioStreamPlayer2D" parent="sons" unique_id=1674822848]
+stream = ExtResource("23_bqy58")
+
+[node name="visto" type="AudioStreamPlayer2D" parent="sons" unique_id=1106294390]
+stream = ExtResource("24_cxuch")
+
+[node name="alavanca" type="AudioStreamPlayer2D" parent="sons" unique_id=722279221]
+stream = ExtResource("25_0b3j6")
 
 [connection signal="timeout" from="inimigos/andando/Path2D/PathFollow2D/Timer" to="inimigos/andando/Path2D" method="_on_timer_timeout"]
