@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="1_epxgt"]
 [ext_resource type="Texture2D" uid="uid://jxhr0ehuuvn6" path="res://assets/Captura de tela 2026-07-31 002134.png" id="1_v7a43"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
-[ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
+[ext_resource type="PackedScene" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="Texture2D" uid="uid://b8mcbsyk6oxlb" path="res://assets/teste player asset.png" id="2_r1n86"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
 [ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
@@ -16,8 +16,8 @@
 [ext_resource type="Script" uid="uid://doa85hhna7nyd" path="res://scripts/color_rect.gd" id="13_3x8ur"]
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="PackedScene" uid="uid://bf4w5imwom88m" path="res://cenas/porta_perm.tscn" id="15_y1h0r"]
-[ext_resource type="PackedScene" uid="uid://7aiwrnnmy5dj" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
+[ext_resource type="PackedScene" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
 [ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="17_krtrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epxgt"]
@@ -59,6 +59,7 @@ offset_left = -280.0
 offset_top = -1006.0
 offset_right = 1520.0
 offset_bottom = 494.0
+mouse_filter = 2
 color = Color(0.09803922, 0.11372549, 0.32156864, 1)
 
 [node name="TerrainManager" parent="." unique_id=1158589891 instance=ExtResource("2_krtrm")]
@@ -234,6 +235,7 @@ polygon = PackedVector2Array(0, 0, 38, 0, 38, -19, 39, -19, 39, 18, 38, 18, 38, 
 
 [node name="Area fim" parent="." unique_id=1831540893 instance=ExtResource("16_y1h0r")]
 position = Vector2(930, -341)
+
 [node name="inimigos" type="Node2D" parent="." unique_id=2032389063]
 
 [node name="parado" type="Node2D" parent="inimigos" unique_id=1688292293]
