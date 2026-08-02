@@ -16,12 +16,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if enemy.frozen or waiting:
 		return
+	#ray()
+	
 	path.progress += delta * speed
 	if (path.progress_ratio == 1 or path.progress_ratio == 0 and path.loop == false):
 		speed = -speed
 		
 		
 
+func ray() -> void:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(enemy.global_position, Vector2(50, 100))
+	var result = space_state.intersect_ray(query)
+	if result:
+		timer.start()
+		waiting = true
 
 func _on_timer_timeout() -> void:
 	waiting = false

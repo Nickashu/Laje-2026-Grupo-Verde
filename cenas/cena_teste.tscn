@@ -270,10 +270,6 @@ loop = false
 
 [node name="Timer" type="Timer" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=1193581365]
 
-[node name="RayCast2D" type="RayCast2D" parent="inimigos/andando/Path2D/PathFollow2D" unique_id=374307234]
-position = Vector2(0, 12)
-target_position = Vector2(0, 4)
-
 [node name="Path2D2" type="Path2D" parent="inimigos/andando" unique_id=605084401]
 position = Vector2(221, -30)
 curve = SubResource("Curve2D_a0uco")
