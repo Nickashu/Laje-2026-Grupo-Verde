@@ -7,4 +7,4 @@ var player_in_area = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":  # Verifica se o corpo que entrou é o jogador
-		transicao.load_scene("res://cenas/cutscene_final.tscn")
+		transicao.load_scene("res://cenas/main_menu.tscn")
