@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bb7321ojalvca"]
 
-[ext_resource type="Script" uid="uid://dbu13q6luxulv" path="res://cenas/cena_teste.gd" id="1_cxuch"]
+[ext_resource type="Script" path="res://cenas/cena_teste.gd" id="1_cxuch"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
-[ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
+[ext_resource type="PackedScene" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
 [ext_resource type="PackedScene" uid="uid://bmu1oacm8e541" path="res://cenas/alavanca_roxa.tscn" id="6_yn1xw"]
 [ext_resource type="PackedScene" uid="uid://chipi86gsnwqx" path="res://cenas/alavanca_preta.tscn" id="7_yn1xw"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://07xtigf77vbp" path="res://cenas/porta_temp.tscn" id="14_dpk8w"]
 [ext_resource type="AudioStream" uid="uid://chckuygwp1utb" path="res://assets/Assets - Sonorização/music.wav" id="15_el17i"]
 [ext_resource type="Script" uid="uid://bk4vwo6b7xj77" path="res://scripts/path_2d.gd" id="16_krtrm"]
-[ext_resource type="PackedScene" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
+[ext_resource type="PackedScene" uid="uid://jyly5ibf15fg" path="res://cenas/area_fim.tscn" id="16_y1h0r"]
 [ext_resource type="PackedScene" uid="uid://4ln3r4xv2xwx" path="res://cenas/estacionário.tscn" id="17_a0uco"]
 [ext_resource type="PackedScene" uid="uid://caxokklc3qmpw" path="res://cenas/inimigo.tscn" id="17_krtrm"]
 [ext_resource type="AudioStream" uid="uid://cdddsikfh6twm" path="res://assets/Assets - Sonorização/door1.wav" id="20_3rtvq"]
@@ -108,7 +108,7 @@ position = Vector2(879, -605)
 polygon = PackedVector2Array(-44, -108, -268, -108, -268, -95, -57, -95, -57, 33, -44, 33, -44, 0)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
-position = Vector2(43, -4)
+position = Vector2(974, -353)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)

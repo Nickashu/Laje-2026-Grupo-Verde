@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cva3n2w0i7ikh"
+path="res://.godot/imported/toque_whatsapp_original-www_tiengdong_com.mp3-68df990a748f71f9ebb46ff345b0790e.mp3str"
+
+[deps]
+
+source_file="res://assets/Assets - Sonorização/toque_whatsapp_original-www_tiengdong_com.mp3"
+dest_files=["res://.godot/imported/toque_whatsapp_original-www_tiengdong_com.mp3-68df990a748f71f9ebb46ff345b0790e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
