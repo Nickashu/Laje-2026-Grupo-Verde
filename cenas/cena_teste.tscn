@@ -108,7 +108,7 @@ position = Vector2(879, -605)
 polygon = PackedVector2Array(-44, -108, -268, -108, -268, -95, -57, -95, -57, 33, -44, 33, -44, 0)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
-position = Vector2(981, -365)
+position = Vector2(21, -4)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
