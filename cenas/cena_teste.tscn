@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bb7321ojalvca"]
 
-[ext_resource type="Script" uid="uid://dbu13q6luxulv" path="res://cenas/cena_teste.gd" id="1_cxuch"]
+[ext_resource type="Script" path="res://cenas/cena_teste.gd" id="1_cxuch"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
 [ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
@@ -107,8 +107,8 @@ position = Vector2(879, -605)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ilha de parede 3" unique_id=255414389]
 polygon = PackedVector2Array(-44, -108, -268, -108, -268, -95, -57, -95, -57, 33, -44, 33, -44, 0)
 
-[node name="player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
-position = Vector2(379, -545)
+[node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
+position = Vector2(31, -3)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
@@ -117,7 +117,7 @@ limit_top = -1027
 limit_right = 1560
 limit_bottom = 601
 script = ExtResource("12_la5s6")
-player = NodePath("../player")
+player = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=759786513]
 
@@ -131,7 +131,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 1, 0, 0.5921569)
 script = ExtResource("13_3x8ur")
-player = NodePath("../../player")
+player = NodePath("../../Player")
 camera = NodePath("../../Camera2D")
 
 [node name="porta_temp" parent="." unique_id=116038246 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
@@ -495,6 +495,9 @@ position = Vector2(964, -453)
 
 [node name="alavancaroxa" parent="." unique_id=720137343 instance=ExtResource("6_yn1xw")]
 position = Vector2(910, 77)
+
+[node name="Sprite2D" parent="alavancaroxa" index="1" unique_id=21109579]
+scale = Vector2(0.6, 0.6)
 
 [node name="portaroxa2" parent="alavancaroxa" index="4" unique_id=1661673552]
 position = Vector2(-89, -628)
