@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://byfpbryovffdx" path="res://assets/cutscene/frame_2.png" id="3_oiyaa"]
 [ext_resource type="Texture2D" uid="uid://dnqklgbfv263h" path="res://assets/cutscene/frame_3.png" id="4_i8rgc"]
 [ext_resource type="Texture2D" uid="uid://cxf21qh8hjmwr" path="res://assets/cutscene/overlay/trim_1.png" id="5_cspt1"]
-[ext_resource type="Texture2D" uid="uid://cfj4mxyp2nxk" path="res://assets/cutscene/overlay/trim_2.png" id="6_itdkv"]
 [ext_resource type="PackedScene" uid="uid://coif6fgu27xtc" path="res://cenas/transição.tscn" id="6_8ug67"]
+[ext_resource type="Texture2D" uid="uid://cfj4mxyp2nxk" path="res://assets/cutscene/overlay/trim_2.png" id="6_itdkv"]
 [ext_resource type="Texture2D" uid="uid://ckrgie6nqlqua" path="res://assets/cutscene/overlay/trim_3.png" id="7_qoblu"]
 [ext_resource type="Texture2D" uid="uid://kefckteyqq8w" path="res://assets/cutscene/frame_4.png" id="8_wln6i"]
 [ext_resource type="Texture2D" uid="uid://bb8fpk8cnacvn" path="res://assets/cutscene/overlay/trim_4.png" id="9_45dng"]
@@ -290,8 +290,8 @@ root_node = NodePath(".")
 libraries/ = SubResource("AnimationLibrary_p2h3r")
 
 [node name="frame1" type="Sprite2D" parent="AnimationPlayer" unique_id=1615917461]
-position = Vector2(640, 360)
-scale = Vector2(5.359945, 5.359945)
+position = Vector2(577.4033, 325.02292)
+scale = Vector2(4.838306, 4.8378987)
 texture = ExtResource("2_8ug67")
 
 [node name="frame2" type="Sprite2D" parent="AnimationPlayer" unique_id=1091855635]
