@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://jyly5ibf15fg"]
+[gd_scene format=3 uid="uid://7aiwrnnmy5dj"]
 
-[ext_resource type="Script" path="res://scripts/area_fim.gd" id="1_8sgvo"]
+[ext_resource type="Script" uid="uid://dwrxqteno4um7" path="res://scripts/area_fim.gd" id="1_8sgvo"]
 [ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_gwqbd"]
-[ext_resource type="PackedScene" path="res://cenas/transição.tscn" id="3_gwqbd"]
+[ext_resource type="PackedScene" uid="uid://coif6fgu27xtc" path="res://cenas/transição.tscn" id="3_gwqbd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wqwjx"]
 radius = 16.124516
