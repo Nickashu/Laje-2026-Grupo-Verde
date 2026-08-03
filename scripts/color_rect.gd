@@ -2,7 +2,7 @@ class_name FiltroInteracao
 extends ColorRect
 
 
-@export var player: Jogador
+@export var player: player
 @export var camera: CameraLivre2D
 
 

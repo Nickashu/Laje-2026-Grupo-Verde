@@ -2,7 +2,7 @@ class_name CameraLivre2D
 extends Camera2D
 
 
-@export var player: Jogador
+@export var player: player
 
 @export var velocidade_camera := 300.0
 @export var velocidade_volta := 6.0

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://1i365mculgdr"]
 
 [ext_resource type="Script" uid="uid://bfyhl3fy5huu6" path="res://scripts/alavanca_amarela.gd" id="1_fkgig"]
-[ext_resource type="Texture2D" uid="uid://dfre6wvokkoy0" path="res://assets/icon.svg" id="2_3e1pb"]
+[ext_resource type="Texture2D" uid="uid://bb38st42yntsu" path="res://assets/spritesObjetos.png" id="2_dipab"]
 [ext_resource type="Texture2D" uid="uid://bkiurxgyr0sbn" path="res://assets/LaserGate1.PNG" id="3_cceo6"]
 [ext_resource type="Script" uid="uid://c5syfu80gi4yf" path="res://scripts/porta_amarela_1.gd" id="4_fkgig"]
 [ext_resource type="Script" uid="uid://bioxqyon2sphn" path="res://scripts/porta_amarela_2.gd" id="5_fkgig"]
@@ -11,6 +11,43 @@ radius = 16.124516
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w1qn"]
 size = Vector2(90.90909, 37.272724)
+
+[sub_resource type="Animation" id="Animation_060j8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_dipab"]
+resource_name = "fodase"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_060j8"]
+_data = {
+&"RESET": SubResource("Animation_060j8"),
+&"fodase": SubResource("Animation_dipab")
+}
 
 [node name="alavanca_amarela" type="Area2D" unique_id=2081020138]
 collision_layer = 4
@@ -23,9 +60,12 @@ shape = SubResource("CircleShape2D_wqwjx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=21109579]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(10.76, 0)
-scale = Vector2(0.215, 0.215)
-texture = ExtResource("2_3e1pb")
+position = Vector2(12, 19)
+scale = Vector2(0.61625004, 0.61625004)
+texture = ExtResource("2_dipab")
+hframes = 3
+vframes = 3
+frame = 6
 
 [node name="Label" type="Label" parent="." unique_id=737223221]
 offset_left = 4.7599926
@@ -67,6 +107,10 @@ script = ExtResource("5_fkgig")
 unique_name_in_owner = true
 position = Vector2(-7.6293945e-06, 8.63636)
 shape = SubResource("RectangleShape2D_0w1qn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1451951892]
+root_node = NodePath("../Sprite2D")
+libraries/ = SubResource("AnimationLibrary_060j8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

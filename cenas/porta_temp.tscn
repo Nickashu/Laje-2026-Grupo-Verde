@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dd7b60w5tbco1" path="res://assets/porta_metal.PNG" id="4_ifdl1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e00t1"]
-size = Vector2(35, 23)
+size = Vector2(63, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8punx"]
-size = Vector2(35, 13.5)
+size = Vector2(63, 13.5)
 
 [sub_resource type="Animation" id="Animation_ifdl1"]
 length = 0.001
@@ -85,7 +85,12 @@ states/fechando/node = SubResource("AnimationNodeAnimation_pukfp")
 states/fechando/position = Vector2(704, 100)
 transitions = ["abrindo", "fechando", SubResource("AnimationNodeStateMachineTransition_5qbti"), "Start", "abrindo", SubResource("AnimationNodeStateMachineTransition_jwujs"), "fechando", "abrindo", SubResource("AnimationNodeStateMachineTransition_vm1d0")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifdl1"]
+size = Vector2(14, 33)
+
 [node name="porta_temp" type="Area2D" unique_id=116038246]
+collision_layer = 12
+collision_mask = 6
 script = ExtResource("1_e00t1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1109783712]
@@ -94,7 +99,7 @@ hframes = 3
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1691416427]
-position = Vector2(-0.5, 0.5)
+position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_e00t1")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2088478475]
@@ -114,3 +119,13 @@ root_node = NodePath("../Sprite2D")
 tree_root = SubResource("AnimationNodeStateMachine_btxj8")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1728481790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1486316633]
+position = Vector2(-25, 0.5)
+shape = SubResource("RectangleShape2D_ifdl1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1983575747]
+position = Vector2(25, 0)
+shape = SubResource("RectangleShape2D_ifdl1")
