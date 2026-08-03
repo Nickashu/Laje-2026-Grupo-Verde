@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bb7321ojalvca"]
 
-[ext_resource type="Script" path="res://cenas/cena_teste.gd" id="1_cxuch"]
+[ext_resource type="Script" uid="uid://dbu13q6luxulv" path="res://cenas/cena_teste.gd" id="1_cxuch"]
 [ext_resource type="PackedScene" uid="uid://dxcc0n8r0xdx4" path="res://cenas/player.tscn" id="2_epxgt"]
 [ext_resource type="PackedScene" uid="uid://cm8v52a44orib" path="res://cenas/terrain_manager.tscn" id="2_krtrm"]
 [ext_resource type="PackedScene" uid="uid://c73d8q8eb0qjj" path="res://cenas/interagível.tscn" id="3_epxgt"]
@@ -87,7 +87,7 @@ position = Vector2(-29, -412)
 position = Vector2(-48, -36)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="parede externa" unique_id=688030561]
-polygon = PackedVector2Array(0, 8, 0, 72, 179, 72, 179, 104, 243, 104, 243, -56, 275, -56, 275, -88, 243, -88, 243, -184, 275, -184, 275, -216, 243, -216, 243, -344, 275, -344, 275, -376, 243, -376, 243, -472, 435, -472, 435, -152, 499, -152, 499, -261, 883, -261, 883, -152, 755, -152, 755, -216, 691, -216, 691, -152, 544, -152, 544, -120, 403, -120, 403, 168, 563, 168, 563, 328, 627, 328, 627, 251, 723, 251, 723, 328, 787, 328, 787, 168, 1011, 168, 1011, 136, 934, 136, 934, -280, 1062, -280, 1062, -344, 947, -344, 947, -357, 1230, -363, 1230, -439, 1287, -439, 1286, -472, 1075, -472, 1075, -504, 1286, -504, 1286, -555, 1235, -555, 1235, -664, 1171, -664, 1171, -600, 1158, -600, 1158, -664, 1118, -664, 1118, -607, 1040, -607, 1040, -628, 1098, -628, 1098, -664, 1011, -664, 1011, -677, 1235, -677, 1235, -728, 627, -728, 627, -664, 531, -664, 531, -362, 870, -362, 870, -495, 883, -495, 883, -344, 518, -344, 518, -664, 403, -664, 403, -536, 230, -536, 230, -632, 147, -632, 147, 8, 0, 8, 2, -3, 109, -714, 284, -718, 359, -655, 447, -742, 663, -773, 1001, -773, 1267, -759, 1319, -567, 1304, -333, 1121, -225, 1081, -177, 988, 5, 1039, 89, 1041, 220, 884, 276, 831, 368, 602, 368, 471, 359, 369, 264, -32, 143)
+polygon = PackedVector2Array(0, 8, 0, 72, 179, 72, 179, 104, 243, 104, 243, -56, 275, -56, 275, -88, 243, -88, 243, -184, 275, -184, 275, -216, 243, -216, 243, -344, 275, -344, 275, -376, 243, -376, 243, -472, 435, -472, 435, -152, 499, -152, 499, -261, 883, -261, 883, -152, 755, -152, 755, -216, 691, -216, 691, -152, 544, -152, 544, -120, 403, -120, 403, 168, 563, 168, 563, 328, 627, 328, 627, 251, 723, 251, 723, 328, 787, 328, 787, 168, 1011, 168, 1011, 136, 934, 136, 934, -280, 1062, -280, 1062, -344, 947, -344, 947, -357, 1230, -363, 1230, -439, 1287, -439, 1286, -472, 1075, -472, 1075, -504, 1286, -504, 1286, -555, 1235, -555, 1235, -664, 1171, -664, 1171, -600, 1158, -600, 1158, -664, 1118, -664, 1118, -607, 1040, -607, 1040, -628, 1098, -628, 1098, -664, 1011, -664, 1011, -677, 1235, -677, 1235, -728, 627, -728, 627, -664, 531, -664, 531, -362, 870, -362, 870, -495, 883, -495, 883, -344, 518, -344, 518, -537, 497, -537, 497, -568, 518.00006, -567.6543, 518, -664, 403, -664, 403, -567, 437, -567, 437, -536, 403, -536, 230, -536, 230, -632, 147, -632, 147, 8, 0, 8, 2, -3, 109, -714, 284, -718, 359, -655, 447, -742, 663, -773, 1001, -773, 1267, -759, 1319, -567, 1304, -333, 1121, -225, 1081, -177, 988, 5, 1039, 89, 1041, 220, 884, 276, 831, 368, 602, 368, 471, 359, 369, 264, -32, 143)
 
 [node name="ilha de parede" type="StaticBody2D" parent="." unique_id=773448377]
 position = Vector2(879, -605)
@@ -108,7 +108,6 @@ position = Vector2(879, -605)
 polygon = PackedVector2Array(-44, -108, -268, -108, -268, -95, -57, -95, -57, 33, -44, 33, -44, 0)
 
 [node name="Player" parent="." unique_id=482596540 instance=ExtResource("2_epxgt")]
-position = Vector2(981, -365)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1637828347 node_paths=PackedStringArray("player")]
 zoom = Vector2(3, 3)
@@ -139,8 +138,20 @@ position = Vector2(419, -589)
 collision_layer = 8
 filtro = NodePath("../CanvasLayer/ColorRect")
 
+[node name="porta_temp3" parent="." unique_id=717200446 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
+position = Vector2(958, -630.00006)
+rotation = -1.5707964
+scale = Vector2(1.2374476, 0.23716664)
+collision_layer = 8
+filtro = NodePath("../CanvasLayer/ColorRect")
+
 [node name="porta_temp2" parent="." unique_id=2035996300 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
 position = Vector2(547, -13)
+collision_layer = 8
+filtro = NodePath("../CanvasLayer/ColorRect")
+
+[node name="porta_temp4" parent="." unique_id=1966437171 node_paths=PackedStringArray("filtro") instance=ExtResource("14_dpk8w")]
+position = Vector2(707, -13)
 collision_layer = 8
 filtro = NodePath("../CanvasLayer/ColorRect")
 
